@@ -1,13 +1,12 @@
 const path = require('path');
 const webpack = require('webpack');
+const SRC = path.resolve(__dirname, 'src');
+const DST = path.resolve(__dirname, 'public');
 
-const src = path.resolve(__dirname, 'src');
-const dist = path.resolve(__dirname, 'public/dist');
-
-module.export = {
-    entry: src + '/client/app.js',
+module.exports = {
+    entry: SRC + '/client/app.js',
     output: {
-        path: dist,
+        path: DST,
         filename: 'bundle.js'
     },     
     module: {
@@ -24,12 +23,18 @@ module.export = {
             ] 
         }]
     },
-    plugins: [ ],
+    plugins:[
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': '"production"'
+        }),
+        new webpack.HotModuleReplacementPlugin()
+    ],
+    mode: 'development',    
     devtool: 'source-map',
     devServer: {
         contentBase: DST,
         historyApiFallback: true,
+        compress: true,
         port: 3100
-    },
-    mode: 'development'
+    }
 }
