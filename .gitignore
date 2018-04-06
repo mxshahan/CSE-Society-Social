@@ -1,6 +1,6 @@
-node_modules
-dist
-.idea
-.vscode
-yarn-error.log
-yarn.lock
+/node_modules
+/dist
+/.idea
+/.vscode
+/yarn-error.log
+/yarn.lock
