@@ -1,45 +1,64 @@
-import React from 'react';
-// import PropTypes from 'prop-types';
-// import { withStyles } from 'material-ui/styles';
-// import AppBar from 'material-ui/AppBar';
-// import Toolbar from 'material-ui/Toolbar';
-// import Typography from 'material-ui/Typography';
-// import Button from 'material-ui/Button';
-// import IconButton from 'material-ui/IconButton';
-// import MenuIcon from 'material-ui-icons/Menu';
-// import Grid from 'material-ui/Grid';
-// import { Link } from 'react-router-dom';
-
-// const styles = {
-//   root: {
-//     flexGrow: 1,
-//   },
-//   flex1: {
-//     flex: 1,
-//   },
-//   flex2: {
-//     flex: 10,
-//   },
-//   menuButton: {
-//     marginLeft: -12,
-//     marginRight: 20,
-//   },
-// };
-
-// function Header(props) {
-//   const { classes } = props;
-//   return (
-//     <div className={classes.root+ " header"}>
-//         <AppBar position="static">
-//             <Typography>Hello</Typography>
-//         </AppBar>
-//     </div>
-//   );
-// }
+import React, {Component} from 'react';
+import Container from './Container';
+import { Button } from 'react-bootstrap';
 
 const Header = () => (
-    <div>Hello</div>
+    <header>
+        <nav className="navbar navbar-expand-lg navbar-light bg-default">
+            <Container>
+                <a className="navbar-brand" href="#">Logo</a>
+                <button 
+                    className="navbar-toggler" 
+                    type="button" 
+                    data-toggle="collapse" 
+                    data-target="#navbarSupportedContent" 
+                    aria-controls="navbarSupportedContent" 
+                    aria-expanded="false" 
+                    aria-label="Toggle navigation"
+                >
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul className="navbar-nav ml-auto">
+                        <li className="nav-item active">
+                            <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">Notice <span className="sr-only">(current)</span></a>
+                        </li>
+                        <li className="nav-item ">
+                            <a className="nav-link" href="#">Blog <span className="sr-only">(current)</span></a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">Events <span className="sr-only">(current)</span></a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">Gallery <span className="sr-only">(current)</span></a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">Newsfeed <span className="sr-only">(current)</span></a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">Contact <span className="sr-only">(current)</span></a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">About <span className="sr-only">(current)</span></a>
+                        </li>
+                        <li className="nav-item dropdown">
+                            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a className="dropdown-item" href="#">Action</a>
+                            <a className="dropdown-item" href="#">Another action</a>
+                            <div className="dropdown-divider"></div>
+                            <a className="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </Container>
+        </nav>
+    </header>
 )
-
-
-export default (Header);
+export default Header;
