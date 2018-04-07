@@ -9,22 +9,20 @@ import Header from '../Components/Partials/Header';
 import Footer from '../Components/Partials/Footer';
 import NotFound from '../Views/NotFound';
 
+
 //STYLES
 import '../Styles/style.scss';
-import Grid from 'material-ui';
 
 const AppRouter = () => (
     <Router history={history}>
-        <Grid>
+        <div>
             <Header/>
             <Switch>
                 <Route path="/" exact={true} component={Homepage}/>    
+                <Route component={NotFound}/>  
             </Switch>
             <Footer/>
-            <Switch>
-                <Route component={NotFound}/>              
-            </Switch>
-        </Grid>
+        </div>
     </Router>
 )
 
