@@ -9,7 +9,7 @@ app.use(express.static(publicDir))
 //SHOULD AFTER ROUTING
 app.use(fallback('index.html', { root: publicDir }));
 
-const port = process.env.PORT || 3100;
+const port = process.env.PORT || 3000;
 app.listen(port, (err) => {
     if(err) throw err;
     console.log(`Hey, I'm your server running at port : ${port}`);
