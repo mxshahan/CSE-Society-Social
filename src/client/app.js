@@ -6,7 +6,6 @@ const App = () => (
     <div>
         <AppRouter/>
     </div>
-)
+);
 
 render(<App/>, document.getElementById('root'));
-

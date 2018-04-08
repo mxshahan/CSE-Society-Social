@@ -1,12 +1,24 @@
 import React, {Component} from 'react';
 import Container from './Container';
-import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Header = () => (
     <header>
-        <nav className="navbar navbar-expand-lg navbar-light bg-default">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark navbar-top">
             <Container>
-                <a className="navbar-brand" href="#">Logo</a>
+                <ul class="navbar-nav ml-auto">
+                    <li className="nav-item">                        
+                        <Link className="nav-link" to="/login"><i className="fa fa-user"></i> Login</Link>
+                    </li>
+                    <li className="nav-item">                                           
+                        <Link className="nav-link" to="/register"><i className="fa fa-user-plus"></i> Register</Link>                        
+                    </li>
+                </ul>
+            </Container>
+        </nav>
+        <nav className="navbar navbar-expand-lg navbar-dark bg-warning navbar-bottom">
+            <Container>
+                <Link className="navbar-brand" to="/">Logo</Link>
                 <button 
                     className="navbar-toggler" 
                     type="button" 
