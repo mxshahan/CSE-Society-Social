@@ -5,7 +5,7 @@ import Row from '../Components/Partials/Row';
 // import styles from '../Styles/notfound.scss';
 
 
-function NotFound() {
+const NotFound = () => {
   return (
     <section className="normal text-center bg-white">
       <Container>
@@ -23,8 +23,5 @@ function NotFound() {
     </section>
   );
 }
-
-NotFound.propTypes = {
-};
 
 export default NotFound;

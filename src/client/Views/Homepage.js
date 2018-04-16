@@ -11,7 +11,6 @@ import Projects from '../Components/Homepage/Projects';
 const Homepage = () => (
     <div>
         <Slider/>
-
         <section id="noticeAndEvent">
             <Container>
                 <Row>

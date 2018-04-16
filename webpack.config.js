@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const SRC = path.resolve(__dirname, 'src');
 const DST = path.resolve(__dirname, 'public');
 
@@ -28,8 +28,7 @@ module.exports = {
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': '"production"'
         }),
-        new webpack.HotModuleReplacementPlugin(),
-        new BundleAnalyzerPlugin()
+        new webpack.HotModuleReplacementPlugin()
     ],
     mode: 'development',    
     devtool: 'source-map',

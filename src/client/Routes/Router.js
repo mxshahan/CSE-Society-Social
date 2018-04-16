@@ -12,13 +12,15 @@ import NotFound from '../Views/NotFound';
 
 //STYLES
 import '../Styles/style.scss';
+import Login from '../Views/Login';
 
 const AppRouter = () => (
     <Router history={history}>
         <div>
             <Header/>
             <Switch>
-                <Route path="/" exact={true} component={Homepage}/>    
+                <Route path="/" exact={true} component={Homepage}/>
+                <Route path="/login" component={Login}/>
                 <Route component={NotFound}/>  
             </Switch>
             <Footer/>
