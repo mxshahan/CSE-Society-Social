@@ -3,16 +3,16 @@ import { Router, Route, Switch } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 export const history = createHistory();
 
-//COMPONENTS
+// STYLES
+import '../Styles/style.scss';
+import Login from '../Views/Login';
+
+// COMPONENTS
 import Homepage from '../Views/Homepage';
 import Header from '../Components/Partials/Header';
 import Footer from '../Components/Partials/Footer';
 import NotFound from '../Views/NotFound';
-
-
-//STYLES
-import '../Styles/style.scss';
-import Login from '../Views/Login';
+import Notice from '../Views/Notice';
 
 const AppRouter = () => (
     <Router history={history}>
@@ -21,6 +21,7 @@ const AppRouter = () => (
             <Switch>
                 <Route path="/" exact={true} component={Homepage}/>
                 <Route path="/login" component={Login}/>
+                <Route path="/notice" component={Notice}/>
                 <Route component={NotFound}/>  
             </Switch>
             <Footer/>

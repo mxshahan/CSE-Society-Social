@@ -2,16 +2,12 @@ import React, {Component} from 'react';
 import Container from './Container';
 import { Link } from 'react-router-dom';
 import Login from '../../Views/Login'
+import Register from '../../Views/Register';
 
 class Header extends Component{
     state = {
-        loginForm: false
-    }
-
-    loginClick = () => {
-        this.setState({
-            loginForm: true
-        })
+        loginForm: false,
+        registerForm: false
     }
 
     render(){
@@ -21,18 +17,40 @@ class Header extends Component{
                     if(!val) {
                         this.setState({
                             loginForm: false
-                        })
+                        });
+                    }
+                }}/> : ''}
+
+                {this.state.registerForm ? <Register registerForm={(val) => {
+                    if(!val) {
+                        this.setState({
+                            registerForm: false
+                        });
                     }
                 }}/> : ''}
                 <div>
                     <nav className="navbar navbar-expand-lg navbar-dark bg-dark navbar-top">
                         <Container>
-                            <ul class="navbar-nav ml-auto">
+                            <ul class="navbar-nav ml-auto navbar-auth">
                                 <li className="nav-item">                        
-                                    <div onClick={this.loginClick} className="nav-link"><i className="fa fa-user"></i> Login</div>
+                                    <div 
+                                        className="nav-link" 
+                                        onClick={() => {
+                                        this.setState({
+                                            loginForm: true
+                                        })
+                                    }} >
+                                        <i className="fa fa-user"></i> Login
+                                    </div>
                                 </li>
                                 <li className="nav-item">                                           
-                                    <div className="nav-link"><i className="fa fa-user-plus"></i> Register</div>
+                                    <div className="nav-link" onClick={() => {
+                                        this.setState({
+                                            registerForm:true
+                                        })
+                                    }}>
+                                        <i className="fa fa-user-plus"></i> Register
+                                    </div>
                                 </li>
                             </ul>
                         </Container>
@@ -54,38 +72,38 @@ class Header extends Component{
                             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul className="navbar-nav ml-auto">
                                     <li className="nav-item active">
-                                        <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+                                        <Link className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="#">Notice <span className="sr-only">(current)</span></a>
+                                        <Link className="nav-link" to="/notice">Notice <span className="sr-only">(current)</span></Link>
                                     </li>
                                     <li className="nav-item ">
-                                        <a className="nav-link" href="#">Blog <span className="sr-only">(current)</span></a>
+                                        <Link className="nav-link" to="/blog">Blog <span className="sr-only">(current)</span></Link>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="#">Events <span className="sr-only">(current)</span></a>
+                                        <Link className="nav-link" to="/event">Events <span className="sr-only">(current)</span></Link>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="#">Gallery <span className="sr-only">(current)</span></a>
+                                        <Link className="nav-link" to="/gallery">Gallery <span className="sr-only">(current)</span></Link>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="#">Newsfeed <span className="sr-only">(current)</span></a>
+                                        <Link className="nav-link" to="/news">Newsfeed <span className="sr-only">(current)</span></Link>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="#">Contact <span className="sr-only">(current)</span></a>
+                                        <Link className="nav-link" to="/contact">Contact <span className="sr-only">(current)</span></Link>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="#">About <span className="sr-only">(current)</span></a>
+                                        <Link className="nav-link" to="/about">About <span className="sr-only">(current)</span></Link>
                                     </li>
                                     <li className="nav-item dropdown">
-                                        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             Dropdown
-                                        </a>
+                                        </Link>
                                         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a className="dropdown-item" href="#">Action</a>
-                                        <a className="dropdown-item" href="#">Another action</a>
+                                        <Link className="dropdown-item" to="#">Action</Link>
+                                        <Link className="dropdown-item" to="#">Another action</Link>
                                         <div className="dropdown-divider"></div>
-                                        <a className="dropdown-item" href="#">Something else here</a>
+                                        <Link className="dropdown-item" to="#">Something else here</Link>
                                         </div>
                                     </li>
                                 </ul>

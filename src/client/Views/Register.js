@@ -5,16 +5,19 @@ import Row from '../Components/Partials/Row';
 import styles from '../Styles/login.scss';
 
 
-const Login = (props) => {
+const Register = (props) => {
   return (
     <section className="Login text-center">
       <Container>
         <Row>
           <div id="LoginForm" className="col-sm-5">
             <form className="form-group">
-              <div className="closeBtnLogin" onClick={() => props.loginForm(false)}><i className="fa fa-times-circle fa-2x"></i></div>
-              <h2>Login</h2>
-              <input type="text" placeholder="Username/Email" className=""/>
+              <div className="closeBtnLogin" onClick={() => props.registerForm(false)}><i className="fa fa-times-circle fa-2x"></i></div>
+              <h2>Sign Up</h2>
+              <input type="text" placeholder="First Name" className=""/>
+              <input type="text" placeholder="Last Name" className=""/>
+              <input type="text" placeholder="Username" className=""/>
+              <input type="text" placeholder="Email" className=""/>
               <input type="password" placeholder="Password" className=""/>
               <div className="d-flex">
                 <div className="mr-auto p-2">
@@ -22,9 +25,9 @@ const Login = (props) => {
                   <label for="remember">Remember</label></div>
                 <div className="p-2"><Link to="#">Forget</Link></div>
               </div>
-              <button className="btn btn-info">Login</button>
+              <button className="btn btn-info">Register</button>
               <div className="d-flex createAccountBtn">
-                <label><Link to="#">Create an Account</Link></label>
+                <label>Already have an account <Link to="#">Login</Link></label>
               </div>
             </form>
           </div>
@@ -34,4 +37,4 @@ const Login = (props) => {
   );
 }
 
-export default Login;
+export default Register;
