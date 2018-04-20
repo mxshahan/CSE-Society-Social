@@ -1,8 +1,9 @@
-const morgan = require('morgan')
+const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const compression =require('compression');
 const helmet = require('helmet');
-const passport = require('passport')
+const passport = require('passport');
+const cors = require('cors');
 
 const isDev = process.env.NODE_ENV == "development";
 const isProd = process.env.NODE_ENV == "production";
@@ -12,6 +13,7 @@ module.exports =(app)=> {
         app.use(compression());
         app.use(helmet());
     }
+    app.use(cors());
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(passport.initialize());

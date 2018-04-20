@@ -4,11 +4,15 @@ const { validateBody, schemas } = require('../config/RouteHelpers')
 const passport = require('passport');
 const passportSignIn = passport.authenticate('local', { session: false });
 const passportSignJWT = passport.authenticate('jwt', { session: false });
+const cors = require('cors');
+
 
 router.route('/signup')
+.options(cors())
 .post(validateBody(schemas.authSignUpSchema),UserController.Signup)
 
 router.route('/signin')
+    .options(cors())
     .post(validateBody(schemas.authSignInSchema),
         passportSignIn,
         UserController.SignIn

@@ -10,9 +10,9 @@ const Register = (props) => {
     <section className="Login text-center">
       <Container>
         <Row>
-          <div id="LoginForm" className="col-sm-5">
+          <div id="regLoginForm" className="col-sm-5">
             <form className="form-group">
-              <div className="closeBtnLogin" onClick={() => props.registerForm(false)}><i className="fa fa-times-circle fa-2x"></i></div>
+              <div className="closeBtnLogin" onClick={() => props.registerForm({login: false, register: false})}><i className="fa fa-times-circle fa-2x"></i></div>
               <h2>Sign Up</h2>
               <input type="text" placeholder="First Name" className=""/>
               <input type="text" placeholder="Last Name" className=""/>
@@ -27,7 +27,7 @@ const Register = (props) => {
               </div>
               <button className="btn btn-info">Register</button>
               <div className="d-flex createAccountBtn">
-                <label>Already have an account <Link to="#">Login</Link></label>
+                <label>Already have an account <Link to="#" onClick={() => props.registerForm({login: true, register: false})}>Login</Link></label>
               </div>
             </form>
           </div>

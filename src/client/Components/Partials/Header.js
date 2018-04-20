@@ -3,6 +3,7 @@ import Container from './Container';
 import { Link } from 'react-router-dom';
 import Login from '../../Views/Login'
 import Register from '../../Views/Register';
+import { connect } from 'react-redux';
 
 class Header extends Component{
     state = {
@@ -14,7 +15,12 @@ class Header extends Component{
         return (
             <header>
                 {this.state.loginForm ? <Login loginForm={(val) => {
-                    if(!val) {
+                    if (val.register) {
+                        this.setState({
+                            registerForm: true
+                        })
+                    } 
+                    if (!val.login) {
                         this.setState({
                             loginForm: false
                         });
@@ -22,7 +28,12 @@ class Header extends Component{
                 }}/> : ''}
 
                 {this.state.registerForm ? <Register registerForm={(val) => {
-                    if(!val) {
+                    if (val.login) {
+                        this.setState({
+                            loginForm: true
+                        })
+                    } 
+                    if (!val.register) {
                         this.setState({
                             registerForm: false
                         });
@@ -30,7 +41,25 @@ class Header extends Component{
                 }}/> : ''}
                 <div>
                     <nav className="navbar navbar-expand-lg navbar-dark bg-dark navbar-top">
+
                         <Container>
+                            {this.props.isAuthenticated ? 
+                            <ul class="navbar-nav ml-auto navbar-auth">
+                                <li className="nav-item">                        
+                                    <Link to="/dashboard" className="nav-link">
+                                        <i className="fa fa-user"></i> Dashbaord
+                                    </Link>
+                                </li>
+                                <li className="nav-item">                                           
+                                    <Link to="#" className="nav-link" onClick={() => {
+                                        localStorage.clear();
+                                        this.props.history.push('/');
+                                    }}>
+                                        <i className="fa fa-exit"></i> Logout
+                                    </Link>
+                                </li>
+                            </ul> 
+                            : 
                             <ul class="navbar-nav ml-auto navbar-auth">
                                 <li className="nav-item">                        
                                     <div 
@@ -53,6 +82,7 @@ class Header extends Component{
                                     </div>
                                 </li>
                             </ul>
+                            }
                         </Container>
                     </nav>
                     <nav className="navbar navbar-expand-lg navbar-dark bg-warning navbar-bottom">
@@ -115,4 +145,9 @@ class Header extends Component{
         )
     }
 }
-export default Header;
+
+const mapStateToProps = (state) => ({
+    isAuthenticated: !!localStorage.getItem('auth')
+})
+  
+export default connect(mapStateToProps)(Header);

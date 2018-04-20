@@ -1,6 +1,5 @@
 import {createStore, combineReducers, applyMiddleware, compose} from 'redux';
-import authReducer from '../reducers/auth';
-import courseReducer from '../reducers/course';
+import authReducer from '../Reducers/auth';
 import thunk from 'redux-thunk';
 // import { sessionReducer, sessionService } from 'redux-react-session';
 
@@ -11,7 +10,6 @@ export default () => {
     const store = createStore(
         combineReducers({
             auth: authReducer,
-            courses: courseReducer
         }),
         composeEnhancer(applyMiddleware(thunk))
     );

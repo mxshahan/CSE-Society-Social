@@ -1,11 +1,12 @@
 const router = require('express-promise-router')();
+const cors = require('cors');
 const ComntControllers = require('../controllres/comments');
 const { validateParam, validateBody, schemas } = require('../config/RouteHelpers');
 const passport = require('passport');
 const passportSignJWT = passport.authenticate('jwt', { session: false });
 
 router.route('/:blogId')
-
+.options(cors())
 //get All comments
 .get(validateParam(schemas.idSchema, 'blogId'), ComntControllers.GetAllBlogComntById)
 

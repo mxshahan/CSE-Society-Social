@@ -11,7 +11,7 @@
     overflow-y: scroll
 }
 
-#LoginForm form {
+#regLoginForm form {
     border: 1px solid #f1f1f1;
     padding: 10%;
     margin-top: 30px;
@@ -19,18 +19,18 @@
     background: #fff;
 }
 
-#LoginForm{
+#regLoginForm{
     margin: 0px auto;
-    animation-name: loginForm;
+    animation-name: regLoginForm;
     animation-delay: 1s
 }
 
-@keyframes loginForm {
+@keyframes regLoginForm {
     from{transform: scale(0.5);opacity: 0}
     to{transform: scale(1);opacity: 1}
 }
 
-#LoginForm h2{
+#regLoginForm h2{
     text-transform: uppercase;
     font-weight: bold;
     color: #403866;
@@ -41,7 +41,7 @@
 }
 
 
-#LoginForm input[type=text], input[type=password] {
+#regLoginForm input[type=text], #regLoginForm input[type=password], #regLoginForm input[type=email] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -50,7 +50,7 @@
     box-sizing: border-box;
 }
 
-#LoginForm input[type=text]:focus, input[type=password]:focus {
+#regLoginForm input[type=text]:focus, #regLoginForm input[type=password]:focus, #regLoginForm input[type=email]:focus {
     animation-name: inputAnim;
     animation-duration: 0.2s;
 }
@@ -60,7 +60,7 @@
     to {transform: scale(1)}
 }
 
-#LoginForm .btn{
+#regLoginForm .btn{
     padding: 12px 20px;
     width: 100%;
 }
@@ -78,6 +78,6 @@
     font-style: italic;
 }
 
-#LoginForm label[for="remember"]{
+#regLoginForm label[for="remember"]{
     margin-left: 10px;
 }

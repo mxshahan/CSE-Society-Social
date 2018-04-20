@@ -13,6 +13,8 @@ import Header from '../Components/Partials/Header';
 import Footer from '../Components/Partials/Footer';
 import NotFound from '../Views/NotFound';
 import Notice from '../Views/Notice';
+import Blog from '../Views/Blog';
+import SingleBlog from '../Components/Blog/SingleBlog';
 
 const AppRouter = () => (
     <Router history={history}>
@@ -22,6 +24,8 @@ const AppRouter = () => (
                 <Route path="/" exact={true} component={Homepage}/>
                 <Route path="/login" component={Login}/>
                 <Route path="/notice" component={Notice}/>
+                <Route path="/blog" exact={true} component={Blog}/>
+                <Route path="/blog/:id" exact={true} component={SingleBlog}/>
                 <Route component={NotFound}/>  
             </Switch>
             <Footer/>
