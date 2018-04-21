@@ -20,3 +20,22 @@
 #blog-right-side-content{
     margin-bottom: 25px;
 }
+
+// Single Blog Section
+#single-blog-sec .profile-img{
+    width: 40px;
+    height: 40px;
+    float:left;
+    margin-right: 20px;
+}
+
+#single-blog-sec #single-blog-title{
+    margin-right: 30px;
+    color:#333;
+    font-size: 15px;
+    float:left
+}
+
+#single-blog-sec #single-blog-title a{
+    color:#333
+}

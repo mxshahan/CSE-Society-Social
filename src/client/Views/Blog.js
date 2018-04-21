@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../Styles/blog.scss';
 import Row from '../Components/Partials/Row';
+
 const Blog = () => (
     <section id="blog-section">
         <div class="container">
@@ -8,7 +10,7 @@ const Blog = () => (
                 <div class="col-md-8">
                     <Row>
                         <div class="col-md-6">
-                            <a href="/blog/asdf11">
+                            <Link to="/blog/asdf11">
                                 <div id="blog-item" class="card">
                                     <img width="100%" class="img-responsive img-rounded" src="assets/2.jpg"/>
                                     <div id="blog-item-content" class="card-body">
@@ -18,10 +20,10 @@ const Blog = () => (
                                         <p class="date">01/02/2018</p>
                                     </div>    
                                 </div>
-                            </a>    
+                            </Link>    
                         </div>
                         <div class="col-md-6">
-                            <a href="/blog/asdf11">
+                            <Link to="/blog/asdf11">
                                 <div id="blog-item" class="card">
                                     <img width="100%" class="img-responsive img-rounded" src="assets/2.jpg"/>
                                     <div id="blog-item-content" class="card-body">
@@ -31,10 +33,10 @@ const Blog = () => (
                                         <p class="date">01/02/2018</p>
                                     </div>    
                                 </div>
-                            </a>    
+                            </Link>    
                         </div>
                         <div class="col-md-6">
-                            <a href="/blog/asdf11">
+                            <Link to="/blog/asdf11">
                                 <div id="blog-item" class="card">
                                     <img width="100%" class="img-responsive img-rounded" src="assets/2.jpg"/>
                                     <div id="blog-item-content" class="card-body">
@@ -44,10 +46,10 @@ const Blog = () => (
                                         <p class="date">01/02/2018</p>
                                     </div>    
                                 </div>
-                            </a>    
+                            </Link>    
                         </div>
                         <div class="col-md-6">
-                            <a href="/blog/asdf11">
+                            <Link to="/blog/asdf11">
                                 <div id="blog-item" class="card">
                                     <img width="100%" class="img-responsive img-rounded" src="assets/2.jpg"/>
                                     <div id="blog-item-content" class="card-body">
@@ -57,7 +59,7 @@ const Blog = () => (
                                         <p class="date">01/02/2018</p>
                                     </div>    
                                 </div>
-                            </a>    
+                            </Link>    
                         </div>
                     </Row>
                 </div>
@@ -65,17 +67,17 @@ const Blog = () => (
                 <div class="col-md-4">
                     <div className="col-md-12">
                         <div id="blog-right-side-content">
-                            <a href="#"><img width="100%" class="img-responsive img-rounded" src="assets/3.jpg"/></a>
+                            <Link to="#"><img width="100%" class="img-responsive img-rounded" src="assets/3.jpg"/></Link>
                         </div>
                     </div>
                     <div className="col-md-12">
                         <div id="blog-right-side-content">
-                            <a href="#"><img width="100%" class="img-responsive img-rounded" src="assets/3.jpg"/></a>
+                            <Link to="#"><img width="100%" class="img-responsive img-rounded" src="assets/3.jpg"/></Link>
                         </div>
                     </div>
                     <div className="col-md-12">
                         <div id="blog-right-side-content">
-                            <a href="#"><img width="100%" class="img-responsive img-rounded" src="assets/3.jpg"/></a>
+                            <Link to="#"><img width="100%" class="img-responsive img-rounded" src="assets/3.jpg"/></Link>
                         </div>
                     </div>
                 </div>
