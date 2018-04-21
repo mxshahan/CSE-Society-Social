@@ -101,39 +101,39 @@ class Header extends Component{
                             </button>
                             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul className="navbar-nav ml-auto">
-                                    <li className="nav-item active">
-                                        <Link className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
+                                    <li className="nav-item">
+                                        <Link activeClassName="active" className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="/notice">Notice <span className="sr-only">(current)</span></Link>
+                                        <Link activeClassName="active" className="nav-link" to="/notice">Notice <span className="sr-only">(current)</span></Link>
                                     </li>
                                     <li className="nav-item ">
-                                        <Link className="nav-link" to="/blog">Blog <span className="sr-only">(current)</span></Link>
+                                        <Link activeClassName="active" className="nav-link" to="/blog">Blog <span className="sr-only">(current)</span></Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="/event">Events <span className="sr-only">(current)</span></Link>
+                                        <Link activeClassName="active" className="nav-link" to="/event">Events <span className="sr-only">(current)</span></Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="/gallery">Gallery <span className="sr-only">(current)</span></Link>
+                                        <Link activeClassName="active" className="nav-link" to="/gallery">Gallery <span className="sr-only">(current)</span></Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="/news">Newsfeed <span className="sr-only">(current)</span></Link>
+                                        <Link activeClassName="active" className="nav-link" to="/news">Newsfeed <span className="sr-only">(current)</span></Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="/contact">Contact <span className="sr-only">(current)</span></Link>
+                                        <Link activeClassName="active" className="nav-link" to="/contact">Contact <span className="sr-only">(current)</span></Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="/about">About <span className="sr-only">(current)</span></Link>
+                                        <Link activeClassName="active" className="nav-link" to="/about">About <span className="sr-only">(current)</span></Link>
                                     </li>
                                     <li className="nav-item dropdown">
-                                        <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <Link activeClassName="active" className="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             Dropdown
                                         </Link>
                                         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <Link className="dropdown-item" to="#">Action</Link>
-                                        <Link className="dropdown-item" to="#">Another action</Link>
+                                        <Link activeClassName="active" className="dropdown-item" to="#">Action</Link>
+                                        <Link activeClassName="active" className="dropdown-item" to="#">Another action</Link>
                                         <div className="dropdown-divider"></div>
-                                        <Link className="dropdown-item" to="#">Something else here</Link>
+                                        <Link activeClassName="active" className="dropdown-item" to="#">Something else here</Link>
                                         </div>
                                     </li>
                                 </ul>
