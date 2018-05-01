@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
-const BlogSchema = new Schema( {
+const BlogSchema = new Schema({
     title :{
         type :String,
         required:true
@@ -15,7 +15,7 @@ const BlogSchema = new Schema( {
         ref: 'user'
     },
     image: [{
-            type:String
+        type:String
     }],  
     comments: [{
         type: Schema.Types.ObjectId,

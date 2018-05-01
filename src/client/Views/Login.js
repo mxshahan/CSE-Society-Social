@@ -4,6 +4,7 @@ import Container from '../Components/Partials/Container';
 import Row from '../Components/Partials/Row';
 import Axios from 'axios';
 import { connect } from 'react-redux';
+import { startLogin } from '../Actions/auth';
 
 
 class Login extends React.Component{
@@ -17,6 +18,8 @@ class Login extends React.Component{
     Axios.post('http://localhost:5000/siu/signin', this.state)
     .then((res) => {
       localStorage.setItem('auth', res.data.token);
+      this.props.startLogin(res.data);
+      this.props.history.push('/');
     })
     .catch((e) => {
       console.log('Error login', e)
@@ -31,7 +34,7 @@ class Login extends React.Component{
           <Row>
             <div id="regLoginForm" className="col-sm-5">
               <form className="form-group" onSubmit={this.loginHandler} >
-                <div className="closeBtnLogin" onClick={() => props.loginForm({login: false, register: false})}><i className="fa fa-times-circle fa-2x"></i></div>
+                <div className="closeBtnLogin" onClick={() => props.history.goBack()}><i className="fa fa-times-circle fa-2x"></i></div>
                 <h2>Login</h2>
                 <input required="required" type="email" placeholder="Email" className="" onChange={(e) => this.setState({
                   email: e.target.value
@@ -47,9 +50,7 @@ class Login extends React.Component{
                 </div>
                 <input type="submit" className="btn btn-info" defaultValue="Login"/>
                 <div className="d-flex createAccountBtn">
-                  <label><Link to="#" onClick={() => {
-                    props.loginForm({login: false, register: true});
-                  }}>Create an Account</Link></label>
+                  <label><Link to="/register">Create an Account</Link></label>
                 </div>
               </form>
             </div>
@@ -60,8 +61,8 @@ class Login extends React.Component{
   }
 }
 
-const mapStateToProps = (state) => ({
-  isAuthenticated: !!localStorage.getItem('auth')
+const mapDispatchToProps = (dispatch) => ({
+  startLogin: (data) => dispatch(startLogin(data))
 })
 
-export default connect(mapStateToProps)(Login);
+export default connect(undefined, mapDispatchToProps)(Login);

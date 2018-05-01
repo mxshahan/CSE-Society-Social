@@ -1,18 +1,17 @@
-export const loginUser = (user_data) => ({
+export const loginUser = (user) => ({
     type: 'LOGIN',
-    user_data
+    user
 });
 
 export const startLogin = (body) => {
-    // console.log(body)
     return (dispatch) => {
         dispatch(loginUser(body))
     }
 }
 
-export const createUser = (user_data) => ({
+export const createUser = (user) => ({
     type: 'CREATE_USER', 
-    user_data
+    user
 })
 
 export const startCreateUser = (body) => {

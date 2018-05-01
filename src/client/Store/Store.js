@@ -1,5 +1,6 @@
 import {createStore, combineReducers, applyMiddleware, compose} from 'redux';
 import authReducer from '../Reducers/auth';
+import blogReducer from '../Reducers/blog';
 import thunk from 'redux-thunk';
 // import { sessionReducer, sessionService } from 'redux-react-session';
 
@@ -10,6 +11,7 @@ export default () => {
     const store = createStore(
         combineReducers({
             auth: authReducer,
+            blog: blogReducer
         }),
         composeEnhancer(applyMiddleware(thunk))
     );

@@ -47,7 +47,23 @@ const Notice = () => (
                         </div>
                     </div>
                     <div className="col-md-4">
-
+                        <div className="col-md-12">
+                            <div id="single-blog-right-content">
+                                <a href="#"><img className="img-responsive img-rounded" src="../assets/11.jpg"/></a>
+                            </div>
+                        </div>
+                        
+                        <div className="col-md-12">
+                            <div id="single-blog-right-content">
+                                <a href="#"><img className="img-responsive img-rounded" src="../assets/10.jpg"/></a>
+                            </div>
+                        </div>
+                        
+                        <div className="col-md-12">
+                            <div id="single-blog-right-content">
+                                <a href="#"><img className="img-responsive img-rounded" src="../assets/9.jpg"/></a>
+                            </div>
+                        </div>
                     </div>
                 </Row>
             </Container> 

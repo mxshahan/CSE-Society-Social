@@ -1,7 +1,13 @@
+
+
 #blog-item-content h4{
     font-size: 20px;
     color:#333;
     font-weight: 600;
+}
+
+#blog-item-content .date{
+    color:#969696   
 }
 
 #blog-section a{
@@ -21,11 +27,93 @@
     margin-bottom: 25px;
 }
 
+
+
+
 // Single Blog Section
-#single-blog-sec .profile-img{
-    width: 40px;
-    height: 40px;
+
+
+.single-blog-head{
     float:left;
+    margin-top: -3px;
+}
+
+#single-blog-head-sec .follow-btn{
+    float:right;
+    cursor: pointer
+}
+
+/*=======================================*/
+/*-----this is for single blog page css -------*/
+/*=======================================*/
+
+.inner-blog-content{
+    background-color: #fff;
+    padding: 20px;
+    margin: 0px 0px 30px 0px;
+    box-shadow: 5px 5px 0px 0px  #ededed;
+    border-radius: 10px;
+}
+
+.inner-blog-content .date{
+    float: left;
+    font-weight: normal;
+    margin-top: -5px; 
+}
+
+.clearfix{
+    overflow: auto;
+}
+
+#single-blog-title{
+    margin-right: 30px;
+    display: block;
+}
+#blog-follow{
+    border: 1px solid #D04B6D;
+    border-radius: 10px;
+    padding: 8px 25px 8px 25px;
+    
+}
+
+#blog-maincontent-sec{
+    margin-top: 60px;
+}
+#blog-maincontent-sec h2{
+    margin-bottom: 30px;
+}
+#blog-maincontent-sec img{
+    width: 100%;
+    min-height: 400px;
+    margin-bottom: 10px;
+} 
+
+#single-blog-right-content{ 
+    margin-left: 10%;
+    margin-bottom: 25px;
+    
+}
+#single-blog-right-content img{
+    min-height: 280px;
+     /*box-shadow: 5px 5px 0px 0px  #dedede;*/
+    border: 2px solid #dadada;
+    width: 100%;
+}
+
+// Single Blog Section
+
+#single-blog-sec img{
+    width: 100%;
+}
+
+#single-blog-sec .profile-name{
+    font-size: 18px;
+}
+
+#single-blog-sec .profile-img{
+    height: 40px;
+    width: 40px;
+    float: left;
     margin-right: 20px;
 }
 
@@ -33,9 +121,39 @@
     margin-right: 30px;
     color:#333;
     font-size: 15px;
-    float:left
+    margin-bottom: 5px;
 }
 
 #single-blog-sec #single-blog-title a{
     color:#333
+}
+
+// Comment Section
+#comment-sec{
+    position: relative;
+}
+
+#comment-sec textarea{
+    width: 100%;
+    box-shadow: 2px 2px 4px 0px #ccc;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#comment-sec .sendBtn{
+    position: absolute;
+    bottom: 35px;
+    right: 20px;
+}
+
+#last-comment .comment{
+    background: #eee;
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+#last-comment .blog-reply{
+    margin-top: 15px;
 }

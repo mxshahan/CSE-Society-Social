@@ -1,11 +1,11 @@
 export default (state = {}, action) => {
     switch(action.type){
         case 'LOGIN':
-            state = action.user_data
+            return state = action.user
         case 'LOGOUT':
             return {};
         case 'CREATE_USER':
-            state = action.user_data
+            state = action.user
         default:
             return state;
     }

@@ -1,89 +1,69 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Axios from 'axios';
+import { connect } from 'react-redux';
 import '../Styles/blog.scss';
 import Row from '../Components/Partials/Row';
+import BlogCard from '../Components/Blog/Blog.Card';
+import BlogSidebar from '../Components/Blog/Blog.Sidebar';
+import { setBlog } from '../Actions/blog';
 
-const Blog = () => (
-    <section id="blog-section">
-        <div class="container">
-            <Row>
-                <div class="col-md-8">
+class Blog extends Component{
+    state = {
+        blog: false
+    }
+    componentDidMount(){
+        Axios.get(`http://localhost:5000/siu/blog`).then((res) => {
+            // console.log(res);
+            this.props.setBlog(res.data);
+            this.setState({
+                blog: true
+            })
+        }).catch((e) => {
+            console.log('Error getting message', e);
+            throw e;
+        })
+    }
+
+    render(){
+        return (
+            <section id="blog-section">
+                {this.state.blog ?
+                <div class="container">
+                    <div className="section-heading">
+                        <h3>Blog</h3>
+                    </div>
                     <Row>
-                        <div class="col-md-6">
-                            <Link to="/blog/asdf11">
-                                <div id="blog-item" class="card">
-                                    <img width="100%" class="img-responsive img-rounded" src="assets/2.jpg"/>
-                                    <div id="blog-item-content" class="card-body">
-                                        <h4 class="title">This is the title of the blog</h4>
-                                        <p class="description"><b>Description:</b> This is the description of the blog item post and the post is laravell</p>
-                                        <p class="writer"><b>Writer:</b> Md Ishtiakur Rahman</p>
-                                        <p class="date">01/02/2018</p>
-                                    </div>    
-                                </div>
-                            </Link>    
+                        <div class="col-md-8">
+                            <Row>
+                                {Object.values(this.props.blog.all).map((blog, key) => <BlogCard key={key} blog={blog}/>)}
+                            </Row>
                         </div>
-                        <div class="col-md-6">
-                            <Link to="/blog/asdf11">
-                                <div id="blog-item" class="card">
-                                    <img width="100%" class="img-responsive img-rounded" src="assets/2.jpg"/>
-                                    <div id="blog-item-content" class="card-body">
-                                        <h4 class="title">This is the title of the blog</h4>
-                                        <p class="description"><b>Description:</b> This is the description of the blog item post and the post is laravell</p>
-                                        <p class="writer"><b>Writer:</b> Md Ishtiakur Rahman</p>
-                                        <p class="date">01/02/2018</p>
-                                    </div>    
-                                </div>
-                            </Link>    
+                        <div class="col-md-4">
+                            <BlogSidebar/>
+                            <BlogSidebar/>
+                            <BlogSidebar/>
+                            <BlogSidebar/>
+                            <BlogSidebar/>
                         </div>
-                        <div class="col-md-6">
-                            <Link to="/blog/asdf11">
-                                <div id="blog-item" class="card">
-                                    <img width="100%" class="img-responsive img-rounded" src="assets/2.jpg"/>
-                                    <div id="blog-item-content" class="card-body">
-                                        <h4 class="title">This is the title of the blog</h4>
-                                        <p class="description"><b>Description:</b> This is the description of the blog item post and the post is laravell</p>
-                                        <p class="writer"><b>Writer:</b> Md Ishtiakur Rahman</p>
-                                        <p class="date">01/02/2018</p>
-                                    </div>    
-                                </div>
-                            </Link>    
-                        </div>
-                        <div class="col-md-6">
-                            <Link to="/blog/asdf11">
-                                <div id="blog-item" class="card">
-                                    <img width="100%" class="img-responsive img-rounded" src="assets/2.jpg"/>
-                                    <div id="blog-item-content" class="card-body">
-                                        <h4 class="title">This is the title of the blog</h4>
-                                        <p class="description"><b>Description:</b> This is the description of the blog item post and the post is laravell</p>
-                                        <p class="writer"><b>Writer:</b> Md Ishtiakur Rahman</p>
-                                        <p class="date">01/02/2018</p>
-                                    </div>    
-                                </div>
-                            </Link>    
-                        </div>
-                    </Row>
+                    </Row> {/*end of row */}                 
                 </div>
+                :
+                <div className="container"> 
+                    <p>Loading...</p>
+                </div>}
+            </section>
+        )
+    }
+}
 
-                <div class="col-md-4">
-                    <div className="col-md-12">
-                        <div id="blog-right-side-content">
-                            <Link to="#"><img width="100%" class="img-responsive img-rounded" src="assets/3.jpg"/></Link>
-                        </div>
-                    </div>
-                    <div className="col-md-12">
-                        <div id="blog-right-side-content">
-                            <Link to="#"><img width="100%" class="img-responsive img-rounded" src="assets/3.jpg"/></Link>
-                        </div>
-                    </div>
-                    <div className="col-md-12">
-                        <div id="blog-right-side-content">
-                            <Link to="#"><img width="100%" class="img-responsive img-rounded" src="assets/3.jpg"/></Link>
-                        </div>
-                    </div>
-                </div>
-            </Row> {/*end of row */}                 
-        </div>
-    </section>
-);
+const mapStateToProps = (state) => ({
+    token: state.auth.token,
+    blog: state.blog
+});
 
-export default Blog;
+const mapDispatchToProps = (dispatch) => ({
+    setBlog: (data) => dispatch(setBlog(data))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Blog);
