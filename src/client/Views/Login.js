@@ -10,18 +10,28 @@ import { startLogin } from '../Actions/auth';
 class Login extends React.Component{
   state = {
     email: '',
-    password: ''
+    password: '',
+    err: false
   }
 
   loginHandler = (e) => {
     e.preventDefault();
-    Axios.post('http://localhost:5000/siu/signin', this.state)
+    Axios.post('http://localhost:5000/siu/signin', {
+      email: this.state.email,
+      password: this.state.password
+    })
     .then((res) => {
       localStorage.setItem('auth', res.data.token);
       this.props.startLogin(res.data);
+      this.setState({
+        err: undefined
+      })
       this.props.history.push('/');
     })
     .catch((e) => {
+      this.setState({
+        err: true
+      })
       console.log('Error login', e)
     })
   }
@@ -34,7 +44,7 @@ class Login extends React.Component{
           <Row>
             <div id="regLoginForm" className="col-sm-5">
               <form className="form-group" onSubmit={this.loginHandler} >
-                <div className="closeBtnLogin" onClick={() => props.history.goBack()}><i className="fa fa-times-circle fa-2x"></i></div>
+                <div className="closeBtnLogin" onClick={() => props.history.push('/')}><i className="fa fa-times-circle fa-2x"></i></div>
                 <h2>Login</h2>
                 <input required="required" type="email" placeholder="Email" className="" onChange={(e) => this.setState({
                   email: e.target.value
@@ -53,6 +63,14 @@ class Login extends React.Component{
                   <label><Link to="/register">Create an Account</Link></label>
                 </div>
               </form>
+
+              {this.state.err &&
+                <div className="alert alert-warning">Login Error</div>
+              }
+              {this.state.err === undefined &&
+                <div className="alert alert-success">Successfull</div>
+              }
+
             </div>
           </Row>
         </Container>

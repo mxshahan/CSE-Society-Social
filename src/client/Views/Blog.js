@@ -25,21 +25,26 @@ class Blog extends Component{
         })
     }
 
-    render(){
+    render() {
         return (
             <section id="blog-section">
                 {this.state.blog ?
                 <div class="container">
                     <div className="section-heading">
                         <h3>Blog</h3>
+                        <div className="float-right">
+                        {this.props.isAuthenticated ?
+                            <Link to="/myaccount/blog/create"><button className="btn btn-outline-secondary">Add New Blog</button></Link>
+                        : <p className="alert alert-light">If you want to post a blog please <Link to="/login">Login</Link></p>}
+                        </div>
                     </div>
                     <Row>
-                        <div class="col-md-8">
+                        <div class="col-md-9">
                             <Row>
                                 {Object.values(this.props.blog.all).map((blog, key) => <BlogCard key={key} blog={blog}/>)}
                             </Row>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3 p-0">
                             <BlogSidebar/>
                             <BlogSidebar/>
                             <BlogSidebar/>
@@ -59,7 +64,8 @@ class Blog extends Component{
 
 const mapStateToProps = (state) => ({
     token: state.auth.token,
-    blog: state.blog
+    blog: state.blog,
+    isAuthenticated: !!state.auth.token
 });
 
 const mapDispatchToProps = (dispatch) => ({

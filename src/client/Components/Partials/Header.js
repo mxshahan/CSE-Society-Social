@@ -9,7 +9,7 @@ import NavBar from './NavBar';
 const Header = (props) => (
     <header>
         <div>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-warning navbar-bottom">
+            <nav className=" mainNav navbar navbar-expand-lg navbar-dark bg-info navbar-bottom">
                 <Container>
                     <Link className="navbar-brand" to="/">Logo</Link>
                     <button 

@@ -26,6 +26,9 @@ const NavBar = () => (
             <NavLink activeClassName="active" className="nav-link" to="/contact">Contact </NavLink>
         </li>
         <li className="nav-item">
+            <NavLink activeClassName="active" className="nav-link" to="/member">Members </NavLink>
+        </li>
+        <li className="nav-item">
             <NavLink activeClassName="active" className="nav-link" to="/about">About </NavLink>
         </li>
         <li className="nav-item dropdown">

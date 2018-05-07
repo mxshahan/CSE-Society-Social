@@ -53,7 +53,8 @@ module.exports = {
         }),
         blogSchema: Joi.object().keys({
             title: Joi.string().required(),
-            description: Joi.string().required()
+            description: Joi.string().required(),
+            image:Joi.array()
         }),   
         commentsSchema: Joi.object().keys({
             comment: Joi.string().required()

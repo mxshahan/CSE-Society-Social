@@ -49,6 +49,7 @@ const UserSchema = new Schema({
         }
     },
     accountType:String,
+    phnNumber: String,
     method: {
         type: String,
         enum: ['student', 'teacher','alumni'],

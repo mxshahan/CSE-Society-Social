@@ -19,8 +19,14 @@
     font-size: 14px;
 }
 
+
+#blog-section .section-heading h3{
+    display: inline-block
+}
+
 #blog-section .card{
     margin-bottom: 15px;
+    height: 460px
 }
 
 #blog-right-side-content{
@@ -28,7 +34,16 @@
 }
 
 
-
+#blog-item-content .btn{
+    text-decoration: none;
+    color: #666;
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+}
 
 // Single Blog Section
 
@@ -37,6 +52,11 @@
     float:left;
     margin-top: -3px;
 }
+
+.single-blog-head p{
+    color: #999;
+}
+
 
 #single-blog-head-sec .follow-btn{
     float:right;

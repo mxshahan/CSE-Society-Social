@@ -41,16 +41,24 @@
 }
 
 
-#regLoginForm input[type=text], #regLoginForm input[type=password], #regLoginForm input[type=email] {
+#regLoginForm input[type=text],
+#regLoginForm input[type=password],
+#regLoginForm input[type=email],
+#regLoginForm input[type=number],
+#regLoginForm select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    background: #fff;
 }
 
-#regLoginForm input[type=text]:focus, #regLoginForm input[type=password]:focus, #regLoginForm input[type=email]:focus {
+#regLoginForm input[type=text]:focus, 
+#regLoginForm input[type=password]:focus, 
+#regLoginForm input[type=email]:focus, 
+#regLoginForm input[type=number]:focus{
     animation-name: inputAnim;
     animation-duration: 0.2s;
 }

@@ -13,18 +13,16 @@ module.exports = {
         newComment.user = user;
 
         const comment = new Comments(newComment);
-        await comment.save();
+        const cmnt = await comment.save();
 
         blog.comments.push(comment)
         await blog.save();
-        blog.comments.push(comment)
-        await user.save();
 
-        res.status(200).json({ sucess: true })
+        res.status(200).json(cmnt)
     },
 
     GetAllBlogComntById: async(req, res) => {
-        const comment = await Comments.find({ post: req.value.params.blogId }).populate("user");
+        const comment = await Comments.find({ blog: req.value.params.blogId }).populate("user");
         res.status(200).json(comment)
     }
 }

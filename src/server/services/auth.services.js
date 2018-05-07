@@ -27,18 +27,21 @@ passport.use("jwt", new JWTStrategy({
 passport.use("local", new LocalStrategy({
     usernameField: 'email'
 }, async(email, password, done) => {
+    let isMatch;
+    let user;
     try {
-        const user = await User.findOne( {email} );
+        user = await User.findOne( {email} );
+    } catch (error) {
+        done(error, false);
+    } finally {
         if (!user) {
             return done(null, false)
         }
-        const isMatch = await user.isValidPassword(password);
+        isMatch = await user.isValidPassword(password);
         if (!isMatch) {
             console.log('Not Match')
             return done(null, false)
         }
         done(null, user)
-    } catch (error) {
-        done(error, false);
     }
 }));

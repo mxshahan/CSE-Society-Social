@@ -19,13 +19,13 @@ module.exports = {
         const passHash = await bcrypt.hash(password, salt)
 
         const newUser = new User({
-            method: accountType,
+            method: accountType.toLowerCase(),
             email,
             password : passHash,
             firstName,
             lastName,
             phnNumber,
-            accountType
+            accountType: accountType.toLowerCase()
         })
 
         const user = await newUser.save();
@@ -38,8 +38,7 @@ module.exports = {
         res.status(200).json({ token });
     },
     User: async(req, res) => {
-        const user = await User.findById(req.user._id)
-        console.log(user)
+        const user = await User.findById(req.user._id).populate('blog');
         res.status(200).json(user);
     },
     UpdatePro: async(req, res) => {

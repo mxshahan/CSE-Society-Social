@@ -1,0 +1,46 @@
+#Dashboard{
+  width: 100%;
+  height: 100%;
+  background: #ddd;
+  left: 0px;
+  right:0px;
+  top:0px;
+  z-index: 99;
+}
+
+.authContainer button:focus{
+  border: 1px solid transparent;
+  box-shadow: none;
+}
+
+
+.authContainer small{
+  display:block
+}
+.authContainer .dropdown-menu{
+  padding: 0px;
+  width: 300px;
+}
+
+.authContainer .dropdown-menu .user-header{
+  padding: 20px 30px;
+}
+.authContainer .dropdown-menu .user-footer{
+  padding: 10px;
+  overflow:hidden;
+}
+
+.authContainer .dropdown-menu .user-footer .btn{
+  padding: 5px 10px;
+  color: #666;
+  border: 1px solid #ddd;
+}
+
+.fixed-nav{
+  position: absolute;
+  background: #fff;
+  overflow: hidden;
+  top: 55px;
+  z-index: 9999;
+  width:100%;
+}
