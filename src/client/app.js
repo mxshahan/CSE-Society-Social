@@ -15,6 +15,17 @@ const App = (
 </Provider>
 );
 
+// const Admin = (
+// <Provider store={store}>
+//     <AdminRouter/>
+// </Provider>
+// )
+
+// if (localStorage.getItem('admin')){
+//     render(Admin, document.getElementById('root'));
+// } else {
+//     render(App, document.getElementById('root'));
+// }
 render(App, document.getElementById('root'));
 
 if (localStorage.getItem('auth')) {

@@ -5,7 +5,7 @@ import{Route, Redirect} from 'react-router-dom';
 import '../Styles/Dashboard/index.scss'
 import '../Styles/Dashboard/sb-admin.scss'
 
-export const PrivateRoute = ({isAuthenticated, component: Component, ...rest}) => (
+const PrivateRoute = ({isAuthenticated, component: Component, ...rest}) => (
     isAuthenticated ? (
         <Route {...rest} component={(props)=> (
             // <div className="fixed-nav sticky-footer bg-dark">

@@ -8,7 +8,7 @@ import Row from '../Components/Partials/Row';
 import Container from '../Components/Partials/Container';
 import UserInfo from '../Components/Profile/UserInfo';
 
-export const ProfileRoute = ({isAuthenticated, component: Component, ...rest}) => (
+const ProfileRoute = ({isAuthenticated, component: Component, ...rest}) => (
     isAuthenticated ? (
         <Route {...rest} component={(props)=> (
             <section id="profile-blog-section">

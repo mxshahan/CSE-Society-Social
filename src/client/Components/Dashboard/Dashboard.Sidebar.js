@@ -28,7 +28,7 @@ class DashboardSidebar extends React.Component{
             </Link>
             <ul class="sidenav-second-level collapse" id="blog">
               <li>
-                <Link to="#">All Blog</Link>
+                <Link to="/dashboard/blog">All Blog</Link>
               </li>
               <li>
                 <Link to="/dashboard/blog/create">Add New</Link>
@@ -118,14 +118,14 @@ class DashboardSidebar extends React.Component{
           <li class="dropdown authContainer">
             <button class="btn bg-transparent dropdown-toggle text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <img width="25px" style={{marginRight: '5px'}} className="img-responsive rounded-circle" src="/assets/avatar.png" alt="User Image"/> 
-              <span className="hidden-xs">{user ? `${user.firstName} ${user.lastName}`: 'Loading'}</span>
+              <span className="hidden-xs">{user ? `${user.firstName} ${user.lastName}`: 'Admin'}</span>
             </button>
               <ul className="dropdown-menu dropdown-menu-right " aria-labelledby="dropdownMenuButton">
                 <li className="user-header text-white text-center bg-dark">
                     <img width="80px" className="img-responsive rounded-circle" src="/assets/avatar.png" alt="User Image"/>
                     <p>
-                    {user ? `${user.firstName} ${user.lastName}`: 'Loading'}
-                    <small>Member since {user && user.createdAt.substring(0, 4)}</small>
+                    {user ? `${user.firstName} ${user.lastName}`: 'Admin'}
+                    <small>Admin panel</small>
                     </p>
                 </li>
                 <li className="user-footer">

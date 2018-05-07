@@ -1,16 +1,16 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import{Route, Redirect} from 'react-router-dom';
-// import DashboardSidebar from '../Components/Dashboard/Dashboard.Sidebar';
+import DashboardSidebar from '../Components/Dashboard/Dashboard.Sidebar';
 import '../Styles/Dashboard/index.scss'
 import '../Styles/Dashboard/sb-admin.scss'
 
-export const AdminRoute = ({isAuthenticated, component: Component, ...rest}) => (
+const AdminRoute = ({isAuthenticated, component: Component, ...rest}) => (
     isAuthenticated ? (
         <Route {...rest} component={(props)=> (
             // <div className="fixed-nav sticky-footer bg-dark">
             <div>
-                {/* <DashboardSidebar/>                 */}
+                <DashboardSidebar/>
                 <Component {...props}/>
             </div>
         )}/>
@@ -19,7 +19,7 @@ export const AdminRoute = ({isAuthenticated, component: Component, ...rest}) => 
 )
 
 const mapStateToProps = (state) => ({
-    isAuthenticated: !!localStorage.getItem('auth')
+    isAuthenticated: !!localStorage.getItem('admin')
 })
 
 export default connect(mapStateToProps)(AdminRoute);

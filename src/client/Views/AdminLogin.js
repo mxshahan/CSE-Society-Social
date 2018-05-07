@@ -22,7 +22,7 @@ class AdminLogin extends React.Component{
     })
     .then((res) => {
       console.log(res.data)
-      localStorage.setItem('auth', res.data.token);
+      localStorage.setItem('admin', res.data.admin);
       this.props.startLogin(res.data);
       this.setState({
         err: undefined

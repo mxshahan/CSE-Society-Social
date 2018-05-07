@@ -10,7 +10,7 @@ module.exports={
         const {username,pass} =req.body;
         console.log(req.body)
         if(username==="admin"&&pass==="admin"){
-            res.status(200).json({token: 'abcdefasfdsdfasoiuoasdfjlkdfjl', success:true});
+            res.status(200).json({admin: 'abcdefasfdsdfasoiuoasdfjlkdfjl', success:true});
         }else {
             res.status(200).json({success:false});
         }

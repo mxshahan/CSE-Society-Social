@@ -21,8 +21,10 @@ import BlogUser from '../Components/Profile/BlogUser';
 import BlogCreate from '../Components/Profile/Blog.Create';
 import ProfileSettings from '../Components/Profile/ProfileSettings';
 import ProfileRoute from './ProfileRoute';
-import { AdminRoute } from './AdminRoute';
+import AdminRoute from './AdminRoute';
 import AdminLogin from '../Views/AdminLogin';
+import PublicRoute from './PublicRouter';
+import AdminBlog from '../Components/Dashboard/Blog';
 
 export const history = createHistory();
 
@@ -40,6 +42,7 @@ const AppRouter = () => (
             </nav> */}
             <Switch>
                 <AdminRoute path="/dashboard" exact={true} component={Dashboard}/>                
+                <AdminRoute path="/dashboard/blog" exact={true} component={AdminBlog}/>                
                 <Route path="/admin" component={AdminLogin}/>
 
                 <PrivateRoute path="/blog/create" component={BlogCreate}/>
@@ -50,8 +53,8 @@ const AppRouter = () => (
                 <ProfileRoute path="/myaccount/settings" exact={true} component={ProfileSettings}/> 
 
                 <Route path="/"component={Homepage} exact={true}/>
-                <Route path="/login" component={Login}/>
-                <Route path="/register" component={Register}/>
+                <PublicRoute path="/login" component={Login}/>
+                <PublicRoute path="/register" component={Register}/>
                 <Route path="/member" component={Member}/>
                 <Route path="/notice" component={Notice}/>
                 <Route path="/blog" exact={true} component={Blog}/>
