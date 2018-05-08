@@ -19,7 +19,7 @@ class BlogComment extends React.Component{
         e.preventDefault();
         Axios({
             method: 'post',
-            url: `http://localhost:5000/siu/cmnt/${this.props.blogID}`,
+            url: `/siu/cmnt/${this.props.blogID}`,
             data: {
               comment: this.state.comment
             },

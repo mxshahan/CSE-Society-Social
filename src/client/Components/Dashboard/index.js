@@ -9,7 +9,7 @@ class Dashboard extends React.Component{
   }
 
   componentDidMount() {
-    Axios.get('http://localhost:5000/admin').then((res) => {
+    Axios.get('/admin').then((res) => {
         this.props.setUser(res.data);
         this.setState({
           user: true

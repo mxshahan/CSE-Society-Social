@@ -16,7 +16,7 @@ class AdminLogin extends React.Component{
 
   loginHandler = (e) => {
     e.preventDefault();
-    Axios.post('http://localhost:5000/admin', {
+    Axios.post('/admin', {
       username: this.state.username,
       pass: this.state.password
     })

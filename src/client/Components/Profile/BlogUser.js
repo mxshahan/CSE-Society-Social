@@ -18,7 +18,7 @@ class UserBlog extends React.Component{
   }
 
   componentDidMount(){
-    Axios.get(`http://localhost:5000/siu/blog/userblog`, {
+    Axios.get(`/siu/blog/userblog`, {
       headers: {
         'auth': localStorage.getItem('auth')
       }
@@ -43,7 +43,7 @@ class UserBlog extends React.Component{
   }
 
   deleteBlog = (id) => {
-    Axios.delete(`http://localhost:5000/siu/blog/${id}`, {
+    Axios.delete(`/siu/blog/${id}`, {
       headers: {
         'auth': localStorage.getItem('auth')
       }

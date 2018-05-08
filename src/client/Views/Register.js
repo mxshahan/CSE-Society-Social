@@ -21,7 +21,7 @@ class Register extends React.Component {
 
   signupHandler = (e) => {
     e.preventDefault();
-    Axios.post('http://localhost:5000/siu/signup', {
+    Axios.post('/siu/signup', {
       email: this.state.email,
       password: this.state.password,
       firstName: this.state.firstName,

@@ -9,7 +9,7 @@ class UserProfileDropdown extends React.Component{
     user: false
   }
   componentDidMount(){
-    Axios.get('http://localhost:5000/siu/user', {
+    Axios.get('/siu/user', {
       headers: {
         'auth': localStorage.getItem('auth')
       }

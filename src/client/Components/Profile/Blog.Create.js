@@ -58,7 +58,7 @@ class BlogCreate extends React.Component{
     }
     Axios({
       method: 'post',
-      url: `http://localhost:5000/siu/blog`,
+      url: `/siu/blog`,
       data: {
         title, description, image
       },

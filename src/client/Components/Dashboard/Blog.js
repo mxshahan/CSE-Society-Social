@@ -9,7 +9,7 @@ class AdminBlog extends React.Component{
     blog: false
   }
   componentDidMount(){
-      Axios.get(`http://localhost:5000/siu/blog`).then((res) => {
+      Axios.get(`/siu/blog`).then((res) => {
           this.setState({
               blog: {
                 all: res.data
@@ -30,7 +30,7 @@ class AdminBlog extends React.Component{
   }
   
   deleteBlog = (id) => {
-    Axios.delete(`http://localhost:5000/siu/blog/${id}`).then((res) => {
+    Axios.delete(`/siu/blog/${id}`).then((res) => {
       this.props.deleteBlog(id),
       this.setState({
         blog: this.props.blog

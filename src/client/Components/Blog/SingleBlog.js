@@ -27,7 +27,7 @@ class SingleBlog extends React.Component{
         //     console.log('pre')
         // } else {
             console.log('post')
-            Axios.get(`http://localhost:5000/siu/blog/${this.props.match.params.id}`).then((res) => {
+            Axios.get(`/siu/blog/${this.props.match.params.id}`).then((res) => {
                 // console.log(res);
                 this.props.getOneBlog(res.data);
                 this.setState({

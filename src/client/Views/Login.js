@@ -16,7 +16,7 @@ class Login extends React.Component{
 
   loginHandler = (e) => {
     e.preventDefault();
-    Axios.post('http://localhost:5000/siu/signin', {
+    Axios.post('/siu/signin', {
       email: this.state.email,
       password: this.state.password
     })
