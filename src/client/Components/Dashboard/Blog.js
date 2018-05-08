@@ -1,7 +1,50 @@
 import React from 'react';
+import Axios from 'axios';
+import { setBlog } from '../../Actions/blog';
+import { connect } from 'react-redux'
+import { deleteBlogFromAll } from '../../Actions/blog';
 
 class AdminBlog extends React.Component{
+  state = {
+    blog: false
+  }
+  componentDidMount(){
+      Axios.get(`http://localhost:5000/siu/blog`).then((res) => {
+          this.setState({
+              blog: {
+                all: res.data
+              }
+          })
+          this.props.setBlog(res.data);
+          
+      }).catch((e) => {
+          console.log('Error getting message', e);
+          throw e;
+      })
+  }
+
+  componentWillMount(){
+    this.setState({
+      blog: this.props.blog
+    })
+  }
+  
+  deleteBlog = (id) => {
+    Axios.delete(`http://localhost:5000/siu/blog/${id}`).then((res) => {
+      this.props.deleteBlog(id),
+      this.setState({
+        blog: this.props.blog
+      })
+    }).catch((e) => {
+      throw e;
+      console.log(e)
+    })
+  }
+  
+
+
   render(){
+    console.log('state', this.state.blog)
     return(
       <div id="Dashboard">
         <div className="content-wrapper">
@@ -24,25 +67,31 @@ class AdminBlog extends React.Component{
             </thead>
             <tfoot>
               <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Author</th>
+                <th>Comments</th>
+                <th>Post date</th>
+                <th>Action</th>
               </tr>
             </tfoot>
             <tbody>
-              <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011/04/25</td>
-                <td>
-                  <button><i className="fa fa-trash"></i></button>
-                </td>
-              </tr>
+              {this.state.blog && this.state.blog.all && Object.values(this.state.blog.all).map((blog, key) => {
+                return ( 
+                <tr>
+                  <td>{blog.title}</td>
+                  <td>{blog.description.substring(0, 50)}</td>
+                  <td>{blog.user && `${blog.user.firstName} ${blog.user.lastName}`}</td>
+                  <td>{blog.comments.length}</td>
+                  <td>{blog.date.substring(0, blog.date.indexOf('T'))}</td>
+                  <td>
+                    <i className="fa fa-trash btn btn-danger" onClick={() => {
+                      this.deleteBlog(blog._id)
+                    }}></i>
+                  </td>
+                </tr>
+                )
+              }) }
             </tbody>
           </table>
         </div>
@@ -56,4 +105,15 @@ class AdminBlog extends React.Component{
   }
 }
 
-export default AdminBlog;
+
+const mapStateToProps = (state) => ({
+  user: state.auth.user,
+  blog: state.blog
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  setBlog: (data) => dispatch(setBlog(data)),
+  deleteBlog: (id) => dispatch(deleteBlogFromAll(id))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(AdminBlog);

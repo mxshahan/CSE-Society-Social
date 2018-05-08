@@ -68,7 +68,9 @@ module.exports ={
         if (!blog) {
             return res.status(404).json({ error: "Blog doesn\'t exist" })
         }
+        console.log(blog);
         const user = await User.findById(blog.user);
+        console.log(user)
         user.blog.pull(blog)
         await user.save()
         await blog.remove();

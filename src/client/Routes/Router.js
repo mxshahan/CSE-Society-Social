@@ -25,6 +25,7 @@ import AdminRoute from './AdminRoute';
 import AdminLogin from '../Views/AdminLogin';
 import PublicRoute from './PublicRouter';
 import AdminBlog from '../Components/Dashboard/Blog';
+import Event from '../Components/Dashboard/Event';
 
 export const history = createHistory();
 
@@ -43,6 +44,10 @@ const AppRouter = () => (
             <Switch>
                 <AdminRoute path="/dashboard" exact={true} component={Dashboard}/>                
                 <AdminRoute path="/dashboard/blog" exact={true} component={AdminBlog}/>                
+                <AdminRoute path="/dashboard/event" exact={true} component={Event}/>                
+                <AdminRoute path="/dashboard/notice" exact={true} component={AdminBlog}/>                
+                <AdminRoute path="/dashboard/result" exact={true} component={AdminBlog}/>                
+                <AdminRoute path="/dashboard/newsfeed" exact={true} component={AdminBlog}/>                
                 <Route path="/admin" component={AdminLogin}/>
 
                 <PrivateRoute path="/blog/create" component={BlogCreate}/>

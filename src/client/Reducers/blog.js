@@ -22,6 +22,23 @@ export default (state = {}, action) => {
            state.single.comments.push(action.data);
            return state;
 
+        case 'DEL' : {
+            const pos = state.all.map((blg) => {
+                return blg._id 
+            }).indexOf(action.id);
+            console.log(pos)
+            const myBlg = state.all.filter((blg, index) => index !== pos);
+            // console.log(myBlg);
+            state.all = myBlg;
+            // return state;
+            // return state = {
+            //     user: {
+            //         blog: myBlg
+            //     },
+            //     ...state.token
+            // }
+            // console.log(state)
+        }
         case 'GET_SINGLE': 
             // console.log(action.id)
             state.single = Object.values(state.all)[Object.values(state.all).map((blog) => blog._id).indexOf(action.id)]

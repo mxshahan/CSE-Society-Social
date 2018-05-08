@@ -26,7 +26,7 @@ router.route('/:blogId')
         passportSignJWT,
         BlogControllers.UpdateBlog)
     .delete(validateParam(schemas.idSchema, 'blogId'),
-        passportSignJWT,
+        // passportSignJWT,
         BlogControllers.DeleteBlogById);
 
 module.exports = router;

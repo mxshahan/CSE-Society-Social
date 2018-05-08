@@ -6,7 +6,6 @@ import { connect } from 'react-redux'
 class DashboardSidebar extends React.Component{
   render(){
     const {isAuthenticated, LogoutUser, user, ...props} = this.props;
-    console.log(user)
     return (
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
       <Link class="navbar-brand" to="/">Homepage</Link>
@@ -38,59 +37,39 @@ class DashboardSidebar extends React.Component{
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
             <Link class="nav-link nav-link-collapse collapsed" data-toggle="collapse" to="#collapseExamplePages" data-parent="#exampleAccordion">
               <i class="fa fa-fw fa-file"></i>
-              <span class="nav-link-text">Example Pages</span>
+              <span class="nav-link-text">Other Pages</span>
             </Link>
             <ul class="sidenav-second-level collapse" id="collapseExamplePages">
               <li>
-                <Link to="login.html">Login Page</Link>
+                <Link to="/dashboard/event">Event</Link>
               </li>
               <li>
-                <Link to="register.html">Registration Page</Link>
+                <Link to="/dashboard/notice">Notice</Link>
               </li>
               <li>
-                <Link to="forgot-password.html">Forgot Password Page</Link>
+                <Link to="/dashboard/result">Result</Link>
               </li>
               <li>
-                <Link to="blank.html">Blank Page</Link>
+                <Link to="/dashboard/newsfeed">Newsfeed</Link>
               </li>
             </ul>
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
             <Link class="nav-link nav-link-collapse collapsed" data-toggle="collapse" to="#collapseMulti" data-parent="#exampleAccordion">
               <i class="fa fa-fw fa-sitemap"></i>
-              <span class="nav-link-text">Menu Levels</span>
+              <span class="nav-link-text">Users</span>
             </Link>
             <ul class="sidenav-second-level collapse" id="collapseMulti">
               <li>
-                <Link to="#">Second Level Item</Link>
+                <Link to="#">Teachers</Link>
               </li>
               <li>
-                <Link to="#">Second Level Item</Link>
+                <Link to="#">Alumni</Link>
               </li>
               <li>
-                <Link to="#">Second Level Item</Link>
-              </li>
-              <li>
-                <Link class="nav-link-collapse collapsed" data-toggle="collapse" to="#collapseMulti2">Third Level</Link>
-                <ul class="sidenav-third-level collapse" id="collapseMulti2">
-                  <li>
-                    <Link to="#">Third Level Item</Link>
-                  </li>
-                  <li>
-                    <Link to="#">Third Level Item</Link>
-                  </li>
-                  <li>
-                    <Link to="#">Third Level Item</Link>
-                  </li>
-                </ul>
+                <Link to="#">Students</Link>
               </li>
             </ul>
-          </li>
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-            <Link class="nav-link" to="#">
-              <i class="fa fa-fw fa-link"></i>
-              <span class="nav-link-text">Link</span>
-            </Link>
           </li>
         </ul>
         <ul class="navbar-nav sidenav-toggler">

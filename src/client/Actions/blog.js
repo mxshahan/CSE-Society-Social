@@ -26,3 +26,9 @@ export const getSingle = (id) => ({
     type: 'GET_SINGLE',
     id
 })
+
+
+export const deleteBlogFromAll = (id) => ({
+    type: 'DEL',
+    id
+})
