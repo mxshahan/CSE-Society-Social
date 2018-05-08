@@ -13,7 +13,7 @@ class Blog extends Component{
         blog: false
     }
     componentDidMount(){
-        Axios.get(`/siu/blog`).then((res) => {
+        Axios.get(`./siu/blog`).then((res) => {
             // console.log(res);
             this.props.setBlog(res.data);
             this.setState({
