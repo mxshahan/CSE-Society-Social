@@ -1,14 +1,14 @@
 const devConfig = {
-    MONGO_URL: 'mongodb://localhost/siufinal-dev',
+    MONGO_URL: 'mongodb://root:12345@ds117540.mlab.com:17540/siu-final',
     JWT_SECRET: 'thisissecret'
 };
 
 const testConfig = {
-    MONGO_URL: 'mongodb://localhost/siufinal-test'
+    MONGO_URL: 'mongodb://root:12345@ds117540.mlab.com:17540/siu-final'
 };
 
 const prodConfig = {
-    MONGO_URL: 'mongodb://localhost/siufinal-prod'
+    MONGO_URL: 'mongodb://root:12345@ds117540.mlab.com:17540/siu-final'
 };
 
 const defaultConfig = {

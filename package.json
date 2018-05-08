@@ -7,7 +7,8 @@
     "build": "webpack -w",
     "dev": "webpack-dev-server -w",
     "server": "nodemon src/server/server/app.js",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "serv": "node src/server/server/app.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
