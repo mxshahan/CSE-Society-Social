@@ -17,10 +17,10 @@ const NavBar = () => (
             <NavLink activeClassName="active" className="nav-link" to="/event">Events </NavLink>
         </li>
         <li className="nav-item">
-            <NavLink activeClassName="active" className="nav-link" to="/gallery">Gallery </NavLink>
+            <NavLink activeClassName="active" className="nav-link" to="/news">Newsfeed </NavLink>
         </li>
         <li className="nav-item">
-            <NavLink activeClassName="active" className="nav-link" to="/news">Newsfeed </NavLink>
+            <NavLink activeClassName="active" className="nav-link" to="/gallery">Gallery </NavLink>
         </li>
         <li className="nav-item">
             <NavLink activeClassName="active" className="nav-link" to="/contact">Contact </NavLink>
@@ -28,10 +28,10 @@ const NavBar = () => (
         <li className="nav-item">
             <NavLink activeClassName="active" className="nav-link" to="/member">Members </NavLink>
         </li>
-        <li className="nav-item">
+        {/* <li className="nav-item">
             <NavLink activeClassName="active" className="nav-link" to="/about">About </NavLink>
-        </li>
-        <li className="nav-item dropdown">
+        </li> */}
+        {/* <li className="nav-item dropdown">
             <NavLink activeClassName="active" className="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Dropdown
             </NavLink>
@@ -41,7 +41,7 @@ const NavBar = () => (
             <div className="dropdown-divider"></div>
             <NavLink activeClassName="active" className="dropdown-item" to="#">Something else here</NavLink>
             </div>
-        </li>
+        </li> */}
     </ul>
 </div>
 );

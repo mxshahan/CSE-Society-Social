@@ -13,11 +13,24 @@ class Blog extends Component{
         blog: false
     }
     componentDidMount(){
-        Axios.get(`./siu/blog`).then((res) => {
+        Axios.get(`/siu/blog`).then((res) => {
             // console.log(res);
-            this.props.setBlog(res.data);
+            // this.props.setBlog(res.data);
             this.setState({
-                blog: true
+                blog: res.data
+            })
+        }).catch((e) => {
+            console.log('Error getting message', e);
+            throw e;
+        })
+    }
+    
+    componentWillMount(){
+        Axios.get(`/siu/blog`).then((res) => {
+            // console.log(res);
+            // this.props.setBlog(res.data);
+            this.setState({
+                blog: res.data
             })
         }).catch((e) => {
             console.log('Error getting message', e);
@@ -41,7 +54,7 @@ class Blog extends Component{
                     <Row>
                         <div class="col-md-9">
                             <Row>
-                                {Object.values(this.props.blog.all).map((blog, key) => <BlogCard key={key} blog={blog}/>)}
+                                {Object.values(this.state.blog).map((blog, key) => <BlogCard key={key} blog={blog}/>)}
                             </Row>
                         </div>
                         <div class="col-md-3 p-0">

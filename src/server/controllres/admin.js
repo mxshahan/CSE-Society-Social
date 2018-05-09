@@ -45,6 +45,7 @@ module.exports={
         await news.save();
         res.status(200).json({ sucess: true });
     },
+    
     ReadAllNews: async(req, res) => {
         const news= await NewsFeed.find({});
         res.status(200).json(news);

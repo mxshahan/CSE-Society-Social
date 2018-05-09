@@ -7,7 +7,7 @@ const DST = path.resolve(__dirname, 'public');
 module.exports = {
     entry: SRC + '/client/app.js',
     output: {
-        path: DST,
+        path: DST + '/dist',
         filename: 'bundle.js'
     },     
     module: {

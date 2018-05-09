@@ -5,7 +5,6 @@ const Comments = require('../models/comments_model');
 module.exports = {
     BlogComment: async(req, res) => {
         const newComment = req.value.body;
-
         const blog = await Blog.findById(req.value.params.blogId);
         newComment.blog = blog;
 
@@ -13,12 +12,13 @@ module.exports = {
         newComment.user = user;
 
         const comment = new Comments(newComment);
-        const cmnt = await comment.save();
+        await comment.save();
 
         blog.comments.push(comment)
         await blog.save();
 
-        res.status(200).json(cmnt)
+        // console.log(comment)
+        res.status(200).json(comment)
     },
 
     GetAllBlogComntById: async(req, res) => {

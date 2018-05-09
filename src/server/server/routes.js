@@ -7,6 +7,4 @@ module.exports= (app) => {
     app.use('/siu/blog', blogRoutes);
     app.use('/cmnt', cmntRoutes);
     app.use('/admin', adminRoutes);
-
-
 }

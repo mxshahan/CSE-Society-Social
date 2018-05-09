@@ -23,7 +23,11 @@ npm manifest:
       "build": "webpack -w",
       "dev": "webpack-dev-server -w",
       "server": "nodemon src/server/server/app.js",
-      "lint": "eslint src"
+      "lint": "eslint src",
+      "start": "node src/server/server/app.js"
+    },
+    "engines": {
+      "node": "8.11.1"
     },
     "dependencies": {
       "axios": "^0.18.0",

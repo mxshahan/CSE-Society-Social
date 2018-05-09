@@ -26,6 +26,11 @@ import AdminLogin from '../Views/AdminLogin';
 import PublicRoute from './PublicRouter';
 import AdminBlog from '../Components/Dashboard/Blog';
 import Event from '../Components/Dashboard/Event';
+import EventPage from '../Views/EventPage';
+import NewsFeed from '../Components/Homepage/NewsFeed';
+import NewsFeedPage from '../Views/NewsFeedPage';
+import Contact from '../Views/Contact';
+import Gallery from '../Views/Gallery';
 
 export const history = createHistory();
 
@@ -62,6 +67,11 @@ const AppRouter = () => (
                 <PublicRoute path="/register" component={Register}/>
                 <Route path="/member" component={Member}/>
                 <Route path="/notice" component={Notice}/>
+                <Route path="/event" component={EventPage}/>
+                <Route path="/news" exact={true} component={NewsFeedPage}/>
+                <Route path="/contact" exact={true} component={Contact}/>
+                <Route path="/gallery" exact={true} component={Gallery}/>
+                {/* <Route path="/news/:id" exact={true} component={SingleNews}/> */}
                 <Route path="/blog" exact={true} component={Blog}/>
                 <Route path="/blog/:id" exact={true} component={SingleBlog}/>
                 <Route component={NotFound}/> 

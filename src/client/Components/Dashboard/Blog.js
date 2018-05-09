@@ -44,7 +44,6 @@ class AdminBlog extends React.Component{
 
 
   render(){
-    console.log('state', this.state.blog)
     return(
       <div id="Dashboard">
         <div className="content-wrapper">

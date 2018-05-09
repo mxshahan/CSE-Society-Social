@@ -18,7 +18,9 @@ router.route('/signin')
         UserController.SignIn
     );
 
-    
+router.route('/everyone')
+.get(UserController.AllUser)
+
 router.route('/user')
 .get(passportSignJWT, UserController.User)
 .put(validateBody(schemas.updateUserPicSchema),

@@ -43,7 +43,7 @@ app.listen(constants.PORT, err => {
         console.log(`
         Server is running on port: ${constants.PORT}
         ---
-        Running on ${process.env.NODE_ENV}
+        Running on ${process.env.NODE_ENV} || development
         ---
         Make Something Great`)
     }

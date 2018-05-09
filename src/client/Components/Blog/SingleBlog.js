@@ -16,7 +16,17 @@ class SingleBlog extends React.Component{
     componentWillMount(){
         this.setState({
           single: this.props.single
-        });
+        });            
+        Axios.get(`/siu/blog/${this.props.match.params.id}`).then((res) => {
+            // console.log(res);
+            this.props.getOneBlog(res.data);
+            this.setState({
+                single: res.data
+            })
+        }).catch((e) => {
+            console.log('Error getting message', e);
+            throw e;
+        })
     }
     componentDidMount(){
         // if (this.props.blogAll) {
@@ -38,6 +48,12 @@ class SingleBlog extends React.Component{
                 throw e;
             })
         // }
+    }
+
+    blgCmd = (data) => {
+        this.setState(() => {
+            this.state.single.comments = this.state.single.comments.push(data);
+        });
     }
 
     render(){
@@ -62,7 +78,7 @@ class SingleBlog extends React.Component{
                             </div> 
                             <div id="blog-maincontent-sec">
                                 <h2 className="title text-center"> {single.title} </h2> 
-                                {single.image.length>0 ? 
+                                {single.image && single.image.length>0 ? 
                                     <img className="img-responsive" src={single.image[0]}/>
                                 :
                                     <img className="img-fluid" src="/assets/default.svg"/>
@@ -78,7 +94,7 @@ class SingleBlog extends React.Component{
                             <BlogAd/>
                         </div>
                     </div>
-                    <BlogComment blogID={single._id} user={single.user} comments={single.comments}/>   
+                    <BlogComment blgCmd={this.blgCmd} blogID={single._id} user={single.user} comments={single.comments}/>   
                 </div>
             </div>
             : 

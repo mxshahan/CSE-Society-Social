@@ -19,7 +19,7 @@ class BlogComment extends React.Component{
         e.preventDefault();
         Axios({
             method: 'post',
-            url: `/siu/cmnt/${this.props.blogID}`,
+            url: `/cmnt/${this.props.blogID}`,
             data: {
               comment: this.state.comment
             },
@@ -30,7 +30,7 @@ class BlogComment extends React.Component{
           }).then((res) => {
             //   console.log(res.data)
               this.props.addComment(res.data);
-            //   this.props.blgCmd(res.data) // Sending data to previous component
+              this.props.blgCmd(res.data) // Sending data to previous component
               this.setState({
                 progress: 'Published',
                 err: undefined,

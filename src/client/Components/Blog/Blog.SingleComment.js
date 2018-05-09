@@ -8,9 +8,9 @@ const SingleComment = ({ comment }) => (
         <img className="img-responsive rounded-circle profile-img" src="../assets/avatar.png"/>
     </div>
     <div className="col-sm-10">
-        <h3 className="profile-name text-primary">{comment.user.firstName} {comment.user.lastName}</h3>
+        <h3 className="profile-name text-primary">{comment && comment.user.firstName} {comment && comment.user.lastName}</h3>
         <div className="comment">
-            <p>{comment.comment}</p>
+            <p>{comment && comment.comment}</p>
         </div> 
         <div className="like-comment-sec">
             <a href="" className="btn btn-default" type="">Like</a>

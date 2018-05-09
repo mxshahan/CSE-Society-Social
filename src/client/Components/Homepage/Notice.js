@@ -1,16 +1,18 @@
 import React, {Component} from 'react';
 import Row from '../Partials/Row';
-
-const Notice = () => (
-    <div className="notice">
-        <div className="card text-white bg-info">
-            <div className="card-header">Posted on: 27 January 2018</div>
-            <div className="card-body">
-                <h4 className="card-title">Info card title</h4>
-                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+import { Link } from 'react-router-dom'
+const Notice = ({data}) => (
+    <Link to={`/notice#${data._id}`}>
+        <div className="notice">
+            <div className="card text-white bg-info">
+                <div className="card-header">Posted on: {data.date.substring(0, data.date.indexOf('T'))}</div>
+                <div className="card-body">
+                    <h4 className="card-title">{data.title}</h4>
+                    <p className="card-text">{data.description.substring(0, data.description.indexOf(' ', 100))}</p>
+                </div>
             </div>
         </div>
-    </div>
+    </Link>
 );
 
 export default Notice;
