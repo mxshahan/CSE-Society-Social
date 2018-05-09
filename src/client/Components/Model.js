@@ -18,8 +18,8 @@ const Model = ({data}) => (
               <td>{data.phnNumber}</td>
             </tr>
             <tr>
-              <td>Number of Blog Created </td>
-              <td>{data.blog.lenght}</td>
+              <td>Blog Created </td>
+              <td>{data.blog.length}</td>
             </tr>
             <tr>
               <td>Account Type: </td>

@@ -34,6 +34,9 @@ class Blog extends Component{
             })
         }).catch((e) => {
             console.log('Error getting message', e);
+            this.setState({
+                blog: undefined
+            })
             throw e;
         })
     }
@@ -68,7 +71,7 @@ class Blog extends Component{
                 </div>
                 :
                 <div className="container"> 
-                    <p>Loading...</p>
+                    <p>'Loading...'</p>
                 </div>}
             </section>
         )
