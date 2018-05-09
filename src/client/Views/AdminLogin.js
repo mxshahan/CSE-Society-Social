@@ -27,7 +27,7 @@ class AdminLogin extends React.Component{
       this.setState({
         err: undefined
       })
-      this.props.history.push('/dashboard');
+      this.props.history.push('/dashboard/blog');
     })
     .catch((e) => {
       this.setState({

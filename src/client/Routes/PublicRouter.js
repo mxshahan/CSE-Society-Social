@@ -12,7 +12,7 @@ const PublicRoute = ({isAuthenticated, component: Component, ...rest }) => (
             </div>
         )}/>
     ) 
-    : <Redirect to="/myaccount"/>
+    : <Redirect to={rest.path === "/admin" ? "/dashboard/blog" : "/myaccount"}/>
 )
 
 const mapStateToProps = (state) => ({

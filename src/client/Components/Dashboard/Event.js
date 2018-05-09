@@ -4,30 +4,24 @@ import { setBlog } from '../../Actions/blog';
 import { connect } from 'react-redux'
 import { deleteBlogFromAll } from '../../Actions/blog';
 import Row from '../Partials/Row';
+import { Link } from 'react-router-dom'
+import DataCard from './DataCard';
 
 class Event extends React.Component{
   state = {
-    blog: false
+    event: false,
+    cont: false
   }
-  componentDidMount(){
-      Axios.get(`/siu/blog`).then((res) => {
-          this.setState({
-              blog: {
-                all: res.data
-              }
-          })
-          this.props.setBlog(res.data);
-          
+  componentDidMount() {
+      Axios.get(`/admin/event`).then((res) => {
+        this.setState({
+          event: res.data
+        })
       }).catch((e) => {
-          console.log('Error getting message', e);
-          throw e;
+        this.setState({
+          event: undefined
+        })
       })
-  }
-
-  componentWillMount(){
-    this.setState({
-      blog: this.props.blog
-    })
   }
   
   deleteBlog = (id) => {
@@ -45,23 +39,22 @@ class Event extends React.Component{
 
 
   render(){
-    console.log('state', this.state.blog)
+    const event = this.state.event;
+    // console.log('state', this.state.blog)
     return(
       <div id="Dashboard">
         <div className="content-wrapper">
           <div className="container-fluid">
-            <button className="btn btn-info mb-4">Create New</button>
+            <h2>event</h2>
+          
+            <Link to="/dashboard/event/create" className="btn btn-info mb-4">Create New</Link>
             <Row>
-              <div className="col-md-4 mb-4">
-                <div className="card card-info">
-                  <div className="card-header bg-dark text-white">Event Title</div>
-                  <div className="card-body p-0">
-                    <img className="img-fluid" src="/assets/card.jpg" alt="Event"/>
-                    <p className="p-2">Lorem Ipsum Where does it come from? Contrary to popular belie</p>
-                  </div>
-                  <div className="card-footer">Card Footer</div>
-                </div>
-              </div>
+              {event ? event.map((evnt) => {
+                return (
+                  <DataCard data={evnt} title="event"/>
+                )
+              })
+              : 'Loading... '}
             </Row>
           </div>
         </div>

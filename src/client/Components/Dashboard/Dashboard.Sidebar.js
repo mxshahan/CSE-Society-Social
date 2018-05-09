@@ -14,45 +14,39 @@ class DashboardSidebar extends React.Component{
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-            <Link class="nav-link" to="/dashboard">
-              <i class="fa fa-fw fa-dashboard"></i>
-              <span class="nav-link-text">Dashboard</span>
-            </Link>
-          </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-            <Link class="nav-link nav-link-collapse collapsed" data-toggle="collapse" to="#blog" data-parent="#exampleAccordion">
+            <Link class="nav-link" to="/dashboard/blog" >
               <i class="fa fa-fw fa-edit"></i> 
               <span class="nav-link-text">Blog</span>
             </Link>
-            <ul class="sidenav-second-level collapse" id="blog">
+            <Link class="nav-link" to="/dashboard/event" >
+              <i class="fa fa-fw fa-leaf"></i> 
+              <span class="nav-link-text">Event</span>
+            </Link>
+            <Link class="nav-link" to="/dashboard/notice" >
+              <i class="fa fa-fw fa-info-circle"></i> 
+              <span class="nav-link-text">Notice</span>
+            </Link>
+            <Link class="nav-link" to="/dashboard/result" >
+              <i class="fa fa-fw fa-list-ul"></i> 
+              <span class="nav-link-text">Result</span>
+            </Link>
+            <Link class="nav-link" to="/dashboard/newsfeed" >
+              <i class="fa fa-fw fa-life-ring"></i> 
+              <span class="nav-link-text">Newsfeed</span>
+            </Link>
+            <Link class="nav-link" to="/dashboard/project" >
+              <i class="fa fa-fw fa-fw fa-edit"></i> 
+              <span class="nav-link-text">Student Project</span>
+            </Link>
+            {/* <ul class="sidenav-second-level collapse" id="blog">
               <li>
                 <Link to="/dashboard/blog">All Blog</Link>
               </li>
               <li>
                 <Link to="/dashboard/blog/create">Add New</Link>
               </li>
-            </ul>
-          </li>
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
-            <Link class="nav-link nav-link-collapse collapsed" data-toggle="collapse" to="#collapseExamplePages" data-parent="#exampleAccordion">
-              <i class="fa fa-fw fa-file"></i>
-              <span class="nav-link-text">Other Pages</span>
-            </Link>
-            <ul class="sidenav-second-level collapse" id="collapseExamplePages">
-              <li>
-                <Link to="/dashboard/event">Event</Link>
-              </li>
-              <li>
-                <Link to="/dashboard/notice">Notice</Link>
-              </li>
-              <li>
-                <Link to="/dashboard/result">Result</Link>
-              </li>
-              <li>
-                <Link to="/dashboard/newsfeed">Newsfeed</Link>
-              </li>
-            </ul>
+            </ul> */}
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
             <Link class="nav-link nav-link-collapse collapsed" data-toggle="collapse" to="#collapseMulti" data-parent="#exampleAccordion">
@@ -97,13 +91,13 @@ class DashboardSidebar extends React.Component{
           <li class="dropdown authContainer">
             <button class="btn bg-transparent dropdown-toggle text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <img width="25px" style={{marginRight: '5px'}} className="img-responsive rounded-circle" src="/assets/avatar.png" alt="User Image"/> 
-              <span className="hidden-xs">{user ? `${user.firstName} ${user.lastName}`: 'Admin'}</span>
+              <span className="hidden-xs">{'Admin'}</span>
             </button>
               <ul className="dropdown-menu dropdown-menu-right " aria-labelledby="dropdownMenuButton">
                 <li className="user-header text-white text-center bg-dark">
                     <img width="80px" className="img-responsive rounded-circle" src="/assets/avatar.png" alt="User Image"/>
                     <p>
-                    {user ? `${user.firstName} ${user.lastName}`: 'Admin'}
+                    {'Admin'}
                     <small>Admin panel</small>
                     </p>
                 </li>
@@ -130,7 +124,7 @@ class DashboardSidebar extends React.Component{
 }
 
 const mapStateToProps = (state) => ({
-  isAuthenticated: !!state.auth.token,
+  isAuthenticated: !!localStorage.getItem('auth'),
   user: state.auth.user
 })
 

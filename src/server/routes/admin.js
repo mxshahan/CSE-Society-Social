@@ -22,6 +22,11 @@ router.route('/newsfeed')
 .post(AdminController.AddNewNews)
 .get(AdminController.ReadAllNews);
 
+router.route('/project')
+.options(cors())
+.post(AdminController.AddProject)
+.get(AdminController.ReadProject);
+
 router.route('/result')
 .options(cors())
 .post(AdminController.AddNewResult)

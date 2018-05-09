@@ -2,6 +2,7 @@ const User = require('../models/user_model');
 const Event = require('../models/event_model');
 const Notice = require('../models/notice_model');
 const Result = require('../models/result_model');
+const Project = require('../models/project_model');
 const NewsFeed = require('../models/newsfeed_model');
 
 
@@ -21,21 +22,32 @@ module.exports={
         await notice.save();
         res.status(200).json({ sucess: true });
     },
-       ReadAllNotice: async(req, res) => {
+    ReadAllNotice: async(req, res) => {
         const allNotice= await Notice.find({});
         res.status(200).json(allNotice);
+    }, 
 
+    AddProject: async(req, res) => {
+        const data = req.body;
+        const project = new Project(data);
+        await project.save();
+        res.status(200).json({ sucess: true });
+    }, 
+
+    ReadProject: async(req, res) => {
+        const project= await Project.find({});
+        res.status(200).json(project);
     },  
     //==========Event============
     AddNewEvent: async(req,res)=>{
         const data = req.body;
-        const notice = new Notice(data);
-        await notice.save();
+        const event = new Event(data);
+        await event.save();
         res.status(200).json({ sucess: true });
     },
     ReadAllEvent: async(req, res) => {
-        const allNotice= await Notice.find({});
-        res.status(200).json(allNotice);
+        const event= await Event.find({});
+        res.status(200).json(event);
     },
 
 

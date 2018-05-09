@@ -20,7 +20,7 @@ const Homepage = () => (
             </Container>
         </section>
 
-        <section id="studentProjects" class="bg-warning">
+        <section id="studentProjects" class="bg-secondary">
             <Container>
                 <Projects/>
             </Container>

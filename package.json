@@ -8,7 +8,8 @@
     "dev": "webpack-dev-server -w",
     "server": "nodemon src/server/server/app.js",
     "lint": "eslint src",
-    "start": "node src/server/server/app.js"
+    "start": "node src/server/server/app.js",
+    "electron": "electron src/server/electron.js"
   },
   "engines": {
     "node": "8.11.1"

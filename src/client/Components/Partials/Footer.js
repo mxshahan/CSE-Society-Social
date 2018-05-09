@@ -50,7 +50,7 @@ const Footer = () => (
 			</div>	
 			<div className="row">
 				<div className="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
-					<p>National Transaction Corporation is a Registered MSP/ISO of Elavon, Inc. Georgia [a wholly owned subsidiary of U.S. Bancorp, Minneapolis, MN]</p>
+					<p>Sylhet Internation University, Project By: Shuvojit Kar, Md Ishtiakur Rahman, Sazzadur Rahman</p>
 					<p className="h6">&copy; All right Reversed.</p>
 				</div>
 				<hr/>
