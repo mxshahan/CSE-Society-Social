@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/bin/node /usr/bin/yarn electron
+  /usr/bin/node /usr/bin/yarn build
 
 PATH: 
   /home/shahan953/bin:/home/shahan953/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
@@ -21,11 +21,9 @@ npm manifest:
     "license": "MIT",
     "scripts": {
       "build": "webpack -w",
-      "dev": "webpack-dev-server -w",
-      "server": "nodemon src/server/server/app.js",
       "lint": "eslint src",
       "start": "node src/server/server/app.js",
-      "electron": "electron src/server/electron.js"
+      "electron": "electron ."
     },
     "engines": {
       "node": "8.11.1"
@@ -44,7 +42,6 @@ npm manifest:
       "firebase": "^4.13.1",
       "helmet": "^3.12.0",
       "history": "^4.7.2",
-      "html-webpack-plugin": "^3.2.0",
       "joi": "^13.1.2",
       "jquery": "^3.3.1",
       "jsonwebtoken": "^8.2.1",
@@ -83,9 +80,11 @@ npm manifest:
       "babel-preset-react": "^6.24.1",
       "babel-preset-stage-0": "^6.24.1",
       "babel-register": "^6.26.0",
+      "base-href-webpack-plugin": "^2.0.0",
       "css-loader": "^0.28.11",
       "eslint": "^4.19.1",
       "eslint-plugin-react": "^7.7.0",
+      "html-webpack-plugin": "^3.2.0",
       "node-sass": "^4.8.3",
       "sass-loader": "^6.0.7",
       "style-loader": "^0.20.3",
@@ -1327,6 +1326,10 @@ Lockfile:
   balanced-match@^1.0.0:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
+  
+  base-href-webpack-plugin@^2.0.0:
+    version "2.0.0"
+    resolved "https://registry.yarnpkg.com/base-href-webpack-plugin/-/base-href-webpack-plugin-2.0.0.tgz#4ef8e916756437daed61d55e3aeddf6c5766a577"
   
   base64-js@^1.0.2:
     version "1.2.3"
@@ -3825,8 +3828,8 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/html-entities/-/html-entities-1.2.1.tgz#0df29351f0721163515dfb9e5543e5f6eed5162f"
   
   html-minifier@^3.2.3:
-    version "3.5.13"
-    resolved "https://registry.yarnpkg.com/html-minifier/-/html-minifier-3.5.13.tgz#6bca6d533a7f18a476dc6aeb3d113071ab5c165e"
+    version "3.5.15"
+    resolved "https://registry.yarnpkg.com/html-minifier/-/html-minifier-3.5.15.tgz#f869848d4543cbfd84f26d5514a2a87cbf9a05e0"
     dependencies:
       camel-case "3.0.x"
       clean-css "4.1.x"
@@ -4858,11 +4861,11 @@ Lockfile:
     version "4.5.0"
     resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   
-  lodash@^4.0.0, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@~4.17.4:
+  lodash@^4.0.0, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.17.2, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@~4.17.4:
     version "4.17.5"
     resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
   
-  lodash@^4.15.0:
+  lodash@^4.15.0, lodash@^4.17.3:
     version "4.17.10"
     resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
   
@@ -7822,8 +7825,8 @@ Lockfile:
       hoek "5.x.x"
   
   toposort@^1.0.0:
-    version "1.0.6"
-    resolved "https://registry.yarnpkg.com/toposort/-/toposort-1.0.6.tgz#c31748e55d210effc00fdcdc7d6e68d7d7bb9cec"
+    version "1.0.7"
+    resolved "https://registry.yarnpkg.com/toposort/-/toposort-1.0.7.tgz#2e68442d9f64ec720b8cc89e6443ac6caa950029"
   
   touch@^3.1.0:
     version "3.1.0"
@@ -7906,8 +7909,8 @@ Lockfile:
       source-map "~0.6.1"
   
   uglify-js@3.3.x:
-    version "3.3.18"
-    resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.3.18.tgz#e16df66d71638df3c9bc61cce827e46f24bdac02"
+    version "3.3.24"
+    resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.3.24.tgz#abeae7690c602ebd006f4567387a0c0c333bdc0d"
     dependencies:
       commander "~2.15.0"
       source-map "~0.6.1"
@@ -8616,7 +8619,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c electron src/server/electron.js
+  Arguments: -c webpack -w
   Directory: /home/shahan953/Desktop/Node Workplace/Project/Shuvojit007
   Output:
   
