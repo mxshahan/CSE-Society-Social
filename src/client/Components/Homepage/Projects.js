@@ -32,7 +32,6 @@ class Projects extends React.Component{
                         items={3}
                     >   
                         {projects.slice(0).reverse().map((project, index) => {
-                            // console.log('pro' , project, index)
                             return <OwlProject data={project}/>
                         })}
                     </OwlCarousel>

@@ -8,13 +8,12 @@ const fallback = require('express-history-api-fallback');
 const app = express()
 
 const publicDir = path.join(__dirname, `../../../public`);
-app.use(express.static(publicDir));
 
 middlewaresConfig(app);
 require('../services/auth.services');
 apiRoutes(app);
 
-
+app.use(express.static(publicDir));
 app.use(fallback('index.html', { root: publicDir }));
 
 // app.use((req, res, next) => {

@@ -1,0 +1,8 @@
+{
+    "extends": [
+        "standard",
+        "standard-react",
+        "eslint-config-react",
+        "babel-eslint"
+    ]
+}

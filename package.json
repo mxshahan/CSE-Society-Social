@@ -5,9 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack",
-    "lint": "eslint src",
-    "start": "node src/server/server/app.js",
-    "electron": "electron ."
+    "start": "node src/server/server/app.js"
   },
   "engines": {
     "node": "8.11.1"

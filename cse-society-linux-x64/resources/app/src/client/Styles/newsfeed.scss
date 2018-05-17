@@ -1,0 +1,61 @@
+.newsfeed .news img{
+    width: 100%;
+}
+
+.newsfeed .card .card-body{
+    overflow: hidden;
+    margin-top:-5px;
+}
+
+.newsfeed .news-image{
+    overflow:hidden;
+}
+.newsfeed .news-description{
+    padding-left: 5px;
+}
+
+.newsfeed .news-description p{
+    margin-top: 5px;
+    line-height: 24px;
+    color:#555;
+}
+
+.newsfeed .news-description .news-title h2{
+    font-size: 24px;
+    color:#565656;
+    font-weight: 600;
+}
+
+.newsfeed .card-header{
+    font-weight: 600;
+    padding: 5px 10px;
+}
+
+//Newsfeed Media
+@media only screen and (max-width: 768px){
+    .newsfeed, .notice{
+        padding:10px;
+        background-color: #ddd;
+    }
+    .newsfeed .news-image{
+        overflow:hidden;
+        padding: 0px;
+    }
+
+    .newsfeed .card .card-body{
+        padding:0px 15px;
+        margin-top:0px;
+        padding-bottom: 15px;
+    }
+    .newsfeed .news-description .news-title h2{
+        font-size: 18px;
+        margin-top: 10px;
+    }
+    .newsfeed .news-description p{
+        font-size: 12px;
+        margin-top: 10px;
+    }
+    .newsfeed .news-description{
+        padding-left: 15px
+    }  
+}

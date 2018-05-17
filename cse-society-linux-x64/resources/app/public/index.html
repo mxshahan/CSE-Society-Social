@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSE Society | Social Site</title>
+    <link rel="sortcut icon" href="favicon.png">
+    <!-- Include Bootstrap -->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Page level plugin CSS-->
+    <link href="/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous">
+    </script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/javascript" src="/dist/bundle.js"></script>
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="/vendor/chart.js/Chart.min.js"></script>
+    <script src="/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="/vendor/datatables/dataTables.bootstrap4.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="/js/sb-admin.min.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="/js/sb-admin-datatables.min.js"></script>
+    <script src="/js/sb-admin-charts.min.js"></script>
+    <script>
+        $('.toolbar span').click(function () {
+            var command = $(this).data('command');
+            if(command== 'p' || command == 'h1' || command == 'h2' || command == 'h3' || command == 'h4' || command == 'h5' || command == 'h6') {
+                document.execCommand('formatBlock', false, command);
+            }
+            if (command == 'createlink' || command == 'insertimage') {
+                url = prompt('Enter the link here: ', 'http:\/\/');
+                document.execCommand($(this).data('command'), false, url);
+            } else document.execCommand($(this).data('command'), false, null);
+        });
+        $('#heading').click(function () {
+            $('.hidethem').toggle();
+            $('.hiddenheading').toggle();
+        });
+        
+        $('#counter').on('input', function () {
+            var text = this.textContent,
+            count = text.trim().replace(/\s+/g, ' ').split(' ').length;
+            $('#count').text(count);
+        })  
+    </script>
+</body>
+</html>

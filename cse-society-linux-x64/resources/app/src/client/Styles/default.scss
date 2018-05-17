@@ -1,0 +1,25 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    background-color: #efefef
+}
+
+#root{
+    overflow-x: hidden;
+}
+// Section Default
+section{
+    padding-top: 35px;
+}
+
+.section-heading{
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.section-heading:after{
+    content: " ";
+    border-bottom: 5px solid #de4826;
+    display: block;
+    width: 100px;
+    margin: 10px 3px;
+}
