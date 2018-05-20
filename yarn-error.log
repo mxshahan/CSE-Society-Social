@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/bin/node /usr/bin/yarn server
+  /usr/bin/node /usr/bin/yarn dev
 
 PATH: 
   /home/shahan953/bin:/home/shahan953/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
@@ -21,9 +21,7 @@ npm manifest:
     "license": "MIT",
     "scripts": {
       "build": "webpack",
-      "lint": "eslint src",
-      "start": "node src/server/server/app.js",
-      "electron": "electron ."
+      "start": "node src/server/server/app.js"
     },
     "engines": {
       "node": "8.11.1"
@@ -9202,7 +9200,7 @@ Lockfile:
       yeoman-environment "^2.0.5"
 
 Trace: 
-  Error: Command "server" not found. Did you mean "semver"?
+  Error: Command "dev" not found.
       at new MessageError (/usr/lib/node_modules/yarn/lib/cli.js:186:110)
       at /usr/lib/node_modules/yarn/lib/cli.js:87307:17
       at Generator.next (<anonymous>)
