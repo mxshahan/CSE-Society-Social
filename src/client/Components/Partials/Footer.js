@@ -50,7 +50,7 @@ const Footer = () => (
 			</div>	
 			<div className="row">
 				<div className="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
-					<p>Sylhet Internation University, Project By: Shuvojit Kar, Md Ishtiakur Rahman, Sazzadur Rahman</p>
+					<p>Sylhet Internation University, Developed By <a href="https://facebook.com/shahan953">Md. Misbauddin Chowdhury Shahan</a></p>
 					<p className="h6">&copy; All right Reversed.</p>
 				</div>
 				<hr/>

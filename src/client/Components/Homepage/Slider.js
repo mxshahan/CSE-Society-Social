@@ -9,7 +9,7 @@ const Slider = () => (
             items={1}
         >
             <div className="item">
-                <img src="assets/1.png" alt="Slider 1"/>
+                <img src="assets/3.png" alt="Slider 1"/>
             </div>
             <div className="item">
                 <img src="assets/2.png" alt="Slider 2"/>
